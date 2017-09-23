@@ -20,6 +20,15 @@ function displaySearchData(data) {
 
 function watchForClicks() {
 //create event listener for add-ingredient button
+$('.ingr-search-form').submit(event => {
+    console.log("add-ingredient button is working");
+    event.preventDefault();
+    const queryTarget = $(event.currentTarget).find('.js-query');
+    const query = queryTarget.val();  //'query' = the value of the user's input string
+    console.log(query);
+    queryTarget.val("");  // clear out the input
+    //getDataFromApi(query, displaySearchData);
+  });
     //append input term to the dom: top of main
     //send input term to query
 

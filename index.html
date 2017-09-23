@@ -8,14 +8,18 @@
   <body>
     <header role="header">
       <h1>Recipe Builder</h1>
-      <form class="" action="index.html" method="post">
+      <form class="ingr-search-form" action="index.html">
         <label for="input"></label>
-        <input type="text" name="input" value="" placeholder="ex: soy sauce">
-        <button class="add-ingredient" type="button" name="button">add ingredient</button></form><hr></header>
+        <input class="js-query" type="text" name="input" placeholder="ex: soy sauce">
+        <button class="add-ingredient" type="submit" name="add-ingredient">add ingredient</button></form><hr></header>
     <main role="main" aria-live="assertive" hidden>
       <div class="results"></div></main>
     <footer role="footer">
       <p>You have the ingredients, we have the recipes.</p></footer>
+    <script
+          src="https://code.jquery.com/jquery-3.2.1.min.js"
+          integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+          crossorigin="anonymous"></script>
     <script type="text/javascript" src="index.js"></script>
   </body>
 </html>
