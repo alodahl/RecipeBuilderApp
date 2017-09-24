@@ -1,21 +1,36 @@
 'use strict';
 
-function getDataFromApi() {
-  //make 1 JSON query for 1 free API
-  //call AJAX via jQuery
+function getDataFromApi(searchTerm , callback) {
+  const settings = {
+  url: 'https://api.edamam.com/search',
+  data: {
+    q: `${searchTerm} in:ingredients`,
+    app_id: '37073675',
+    app_key: '46b633f590a05be11cab8a438977deb9',
+//46b633f590a05be11cab8a438977deb9	—
+    to: 8,
+    part: 'hits'
+  },
+  dataType: 'json',
+  type: 'GET',
+  success: callback
+};
+$.ajax(settings);//make 1 JSON query for 1 free API
   //return result data to displaySearchData()
 }
 
-function renderResult() {
+function renderResult(item) {
+  let recipeResult = `<span class="thumbnail"><img src="${item.recipe.image}"</span>`;
   //use string interpolation to create a div containing API recipe data
   //data needed: small photo, title, author
+  return recipeResult;
 }
 
 function displaySearchData(data) {
-  //use jQuery to append "We have # results for you:"
-  //use jQuery to renderResult(data) and append the first 12 results to the DOM
-  //use jQuery to remove 'hidden' aria attr from main
-
+  console.log('displaySearchData is running');
+  console.log(data);
+  const results = data.hits.map((item, index) => renderResult(item));
+  $('.results').html(results);
 }
 
 function watchForClicks() {
@@ -27,7 +42,7 @@ $('.ingr-search-form').submit(event => {
     const query = queryTarget.val();  //'query' = the value of the user's input string
     console.log(query);
     queryTarget.val("");  // clear out the input
-    //getDataFromApi(query, displaySearchData);
+    getDataFromApi(query, displaySearchData);
   });
     //append input term to the dom: top of main
     //send input term to query
