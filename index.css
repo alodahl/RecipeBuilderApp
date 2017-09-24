@@ -2,3 +2,6 @@ body {
   text-align: center;
   margin: 0 auto;
 }
+h3, h4, p {
+   max-width: 300px;
+ }

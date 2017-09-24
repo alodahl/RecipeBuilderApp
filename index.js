@@ -19,8 +19,12 @@ $.ajax(settings);//make 1 JSON query for 1 free API
   //return result data to displaySearchData()
 }
 
-function renderResult(item) {
-  let recipeResult = `<span class="thumbnail"><img src="${item.recipe.image}"</span>`;
+function renderResult(item, index) {
+  let recipeResult = `<span class="thumbnail">
+                        <img src="${item.recipe.image}">
+                        <h3>${item.recipe.label}</h3>
+                        <h4>by ${item.recipe.source}</h4>
+                        <p>${item.recipe.ingredients.length} ingredients</p></span>`;
   //use string interpolation to create a div containing API recipe data
   //data needed: small photo, title, author
   return recipeResult;
@@ -29,7 +33,7 @@ function renderResult(item) {
 function displaySearchData(data) {
   console.log('displaySearchData is running');
   console.log(data);
-  const results = data.hits.map((item, index) => renderResult(item));
+  const results = data.hits.map((item, index) => renderResult(item, index));
   $('.results').html(results);
 }
 
