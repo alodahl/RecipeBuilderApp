@@ -10,6 +10,16 @@ h3, h4, p {
    max-width: 300px;
  }
 
+ .find-recipes {
+   display: block;
+   margin: 20px auto;
+   width: 200px;
+ }
+
+ .added-ingredient-list {
+   margin: 20px 0;
+ }
+
  .added {
    text-align: left;
  }

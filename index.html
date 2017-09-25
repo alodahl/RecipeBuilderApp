@@ -1,29 +1,35 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Recipe Builder</title>
-    <link rel="stylesheet" href="index.css">
-  </head>
-  <body>
-    <header role="header">
-      <h1>Recipe Builder</h1>
-      <form class="ingr-search-form js-ingr-search-form" action="index.html">
-        <label for="input"></label>
+<head>
+  <meta charset="utf-8">
+  <title>Recipe Builder</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <header role="header">
+    <h1>Recipe Builder</h1>
+    <form class="ingr-search-form js-ingr-search-form" action="index.html">
+      <div class="">
+        <span class="js-added-ingredient-list added-ingredient-list">Add some ingredients!</span>
         <input class="js-query" type="text" name="input" placeholder="add an ingredient" required>
         <button class="js-add-ingredient" type="submit" name="add-ingredient">add</button>
-        <button class="js-find-recipes" type="button" name="search-ingredient">find recipes</button>
-      </form><hr></header>
-    <main role="main" aria-live="assertive">
-      <span class="js-added added"></span>
-      <h2 hidden>We have <span class=js-resultNum>8</span> recipes for you:</h2>
-      <div class="results js-results"></div></main>
-    <footer role="footer">
-      <p class="tagline">You have the ingredients, we have the recipes.</p></footer>
-    <script
-          src="https://code.jquery.com/jquery-3.2.1.min.js"
-          integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-          crossorigin="anonymous"></script>
-    <script type="text/javascript" src="index.js"></script>
-  </body>
+      </div>
+      <button class="js-find-recipes find-recipes" type="button" name="search-ingredient">find recipes</button>
+    </form>
+    <hr>
+  </header>
+  <main role="main" aria-live="assertive">
+    <!-- <div class="js-added-ingredient-list">Add some ingredients!</div> -->
+    <h2 hidden>We have <span class=js-resultNum>8</span> recipes for you:</h2>
+    <div class="results js-results"></div>
+  </main>
+  <footer role="footer">
+    <p class="tagline">You have the ingredients, we have the recipes.</p>
+  </footer>
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script type="text/javascript" src="index.js"></script>
+</body>
 </html>
