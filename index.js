@@ -1,5 +1,7 @@
 'use strict';
 
+let queryArray = [];
+
 function getDataFromApi(searchTerm , callback) {
   const settings = {
   url: 'https://api.edamam.com/search',
@@ -37,24 +39,38 @@ function displaySearchData(data) {
   $('.js-results').html(results);
 }
 
+function renderIngrButton(item, index) {
+  let button = `<button class="remove-added" type="button" id="${index}">${item} X</button>`;
+  return button;
+}
+
+function displayAddedIngredients() {
+  const ingredients = queryArray.map((item, index) => renderIngrButton(item, index));
+  $('.js-added').html(ingredients);
+}
+
+
 function watchForClicks() {
-//create event listener for add-ingredient button
-$('.js-ingr-search-form').submit(event => {
+  $('.js-ingr-search-form').submit(event => {
     console.log("add-ingredient button is working");
     event.preventDefault();
     const queryTarget = $(event.currentTarget).find('.js-query');
     const query = queryTarget.val();  //'query' = the value of the user's input string
     console.log(query);
+    queryArray.push(query);
+    displayAddedIngredients();
     queryTarget.val("");  // clear out the input
-    getDataFromApi(query, displaySearchData);
   });
-    //append input term to the dom: top of main
-    //send input term to query
 
-//create event listener for result clicks,
-    //which should open a linked recipe page
+  $('.js-find-recipes').on('click', event => {
+    console.log("js-find-recipes button is working");
+    getDataFromApi(queryArray, displaySearchData);
+  })
 
+  $('.js-added').on('click', function(event) {
+    
+    displayAddedIngredients();
+  })
 }
-
 
 $(watchForClicks);

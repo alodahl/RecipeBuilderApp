@@ -10,11 +10,15 @@ h3, h4, p {
    max-width: 300px;
  }
 
+ .added {
+   text-align: left;
+ }
+
 .thumbnail {
    display: inline-block;
    padding: 10px;
  }
- 
+
 .tagline {
    width: 500px;
    margin: 0 auto;

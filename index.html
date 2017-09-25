@@ -10,9 +10,12 @@
       <h1>Recipe Builder</h1>
       <form class="ingr-search-form js-ingr-search-form" action="index.html">
         <label for="input"></label>
-        <input class="js-query" type="text" name="input" placeholder="ex: soy sauce">
-        <button class="add-ingredient" type="submit" name="add-ingredient">add ingredient</button></form><hr></header>
+        <input class="js-query" type="text" name="input" placeholder="add an ingredient" required>
+        <button class="js-add-ingredient" type="submit" name="add-ingredient">add</button>
+        <button class="js-find-recipes" type="button" name="search-ingredient">find recipes</button>
+      </form><hr></header>
     <main role="main" aria-live="assertive">
+      <span class="js-added added"></span>
       <h2 hidden>We have <span class=js-resultNum>8</span> recipes for you:</h2>
       <div class="results js-results"></div></main>
     <footer role="footer">
