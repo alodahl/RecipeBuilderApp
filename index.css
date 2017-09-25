@@ -2,6 +2,20 @@ body {
   text-align: center;
   margin: 0 auto;
 }
+
+header {
+  background-color: #FCD787;
+}
 h3, h4, p {
    max-width: 300px;
+ }
+
+.thumbnail {
+   display: inline-block;
+   padding: 10px;
+ }
+ 
+.tagline {
+   width: 500px;
+   margin: 0 auto;
  }
