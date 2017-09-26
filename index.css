@@ -97,6 +97,10 @@ h3, h4, p {
   opacity: 50%;
 }
 
+.instructions {
+  text-align: left;
+}
+
  .hidden {
   display: none;
 }

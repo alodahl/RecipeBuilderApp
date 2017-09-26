@@ -22,8 +22,18 @@ function getDataFromApi(searchTerm , callback) {
 // <a href="${item.recipe.url}" aria-label="${item.recipe.label}"  target="_blank"></a>
 //renders each API recipe as HTML to be displayed
 function renderResult(item, index) {
-  console.log(item);
-  let recipeResult = `<span class="thumbnail" data-index="${index}" data-image="${item.recipe.image}" data-label="${item.recipe.label}" data-source="${item.recipe.source}" data-ingredientlist="${item.recipe.ingredientLines}">
+  // console.log(item);
+  let recipeInstructions = item.recipe.ingredientLines;
+  let ingredientli = [];
+  function renderlistInstructions(array) {
+    for (let i=0; i < array.length; i++) {
+      ingredientli.push(`<li class="instructions">${array[i]}</li>`);
+    }
+  }
+
+  renderlistInstructions(recipeInstructions);
+  console.log(ingredientli);
+  let recipeResult = `<span class="thumbnail" data-index="${index}" data-image="${item.recipe.image}" data-label="${item.recipe.label}" data-ingredientlist="${ingredientli}" data-source="${item.recipe.source}" >
     <img src="${item.recipe.image}" alt="${item.recipe.label}">
     <h3>${item.recipe.label}</h3>
     <h4>by ${item.recipe.source}</h4>
@@ -51,11 +61,6 @@ function renderIngrButton(item, index) {
 function displayAddedIngredients() {
   const ingredients = queryArray.map((item, index) => renderIngrButton(item, index));
   $('.js-added-ingredient-list').html(ingredients);
-}
-
-function renderIngredientsList(item, index) {
-  let listItem = `<li>${item}</li>`
-  return listItem;
 }
 
 
@@ -92,16 +97,12 @@ function watchForClicks() {
     var label = $(this).attr('data-label');
     var source = $(this).attr('data-source');
     var ingredients = $(this).attr('data-ingredientlist');
-    // var ingredientList = ingredients.map((item, index) => renderIngredientsList(item, index))
-    // console.log(data);
     let content = `<img src="${image}" alt="${label}">
                   <h3>${label}</h3>
                   <h4>by ${source}</h4>
-                  <ul>${ingredients}</ul>
-                  `;
-                    // <p>${ingredients}</p>
-    $('.js-modal-content').html(content);
+                  <ul>${ingredients}</ul>`;
 
+    $('.js-modal-content').html(content);
     $('.modal').removeClass("hidden");  //then show the div
     // $('.js-search-results').prop("hidden", true);
     // $('h1').prop("hidden", true);
