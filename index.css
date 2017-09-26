@@ -57,13 +57,14 @@ h3, h4, p {
   display: block;
   background-color: white;
   width: 600px;
-  height: 600px;
+  /*height: 600px;*/
   max-width: 95%;
   max-height: 95%;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  overflow: auto;
 
 }
 
@@ -80,8 +81,8 @@ h3, h4, p {
 
 .close-button {
   position: absolute;
-  top: -10px;
-  right: -10px;
+  top: 0px;
+  right: 0px;
   width: 30px;
   height: 30px;
 }
