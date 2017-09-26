@@ -20,20 +20,21 @@ function getDataFromApi(searchTerm , callback) {
 }
 
 // <a href="${item.recipe.url}" aria-label="${item.recipe.label}"  target="_blank"></a>
+//renders each API recipe as HTML to be displayed
 function renderResult(item, index) {
-  let recipeResult = `<span class="thumbnail">
-  <img src="${item.recipe.image}" alt="${item.recipe.label}">
-  <h3>${item.recipe.label}</h3>
-  <h4>by ${item.recipe.source}</h4>
-  <p>${item.recipe.ingredients.length} ingredients</p></span>`;
+  let recipeResult = `<span class="thumbnail" data-index="${index}" data-data="${item}">
+    <img src="${item.recipe.image}" alt="${item.recipe.label}">
+    <h3>${item.recipe.label}</h3>
+    <h4>by ${item.recipe.source}</h4>
+    <p>${item.recipe.ingredients.length} ingredients</p></span>`;
   return recipeResult;
 }
 
+//sends API items to get rendered,
+//then displays them in the dom along with the search results count
 function displaySearchData(data) {
-  console.log('displaySearchData is running');
   console.log(data);
   const results = data.hits.map((item, index) => renderResult(item, index));
-
   $('.js-resultNum').text(data.count);
   $('h2').prop("hidden", false);
   $('.js-results').html(results);
@@ -44,6 +45,8 @@ function renderIngrButton(item, index) {
   return button;
 }
 
+//sends submitted ingredients to be rendered,
+//then adds them to page as buttons
 function displayAddedIngredients() {
   const ingredients = queryArray.map((item, index) => renderIngrButton(item, index));
   $('.js-added-ingredient-list').html(ingredients);
@@ -51,22 +54,22 @@ function displayAddedIngredients() {
 
 
 function watchForClicks() {
+  //a submitted ingredient will get added to page as well as an ingredients array
   $('.js-ingr-search-form').submit(event => {
-    console.log("add-ingredient button is working");
     event.preventDefault();
     const queryTarget = $(event.currentTarget).find('.js-query');
     const query = queryTarget.val();  //'query' = the value of the user's input string
-    console.log(query);
     queryArray.push(query);
     displayAddedIngredients();
     queryTarget.val("");  // clear out the input
   });
 
+  //click on the find recipes button to search for recipe with added ingredients
   $('.js-find-recipes').on('click', event => {
-    console.log("js-find-recipes button is working");
     getDataFromApi(queryArray, displaySearchData);
   })
 
+  //click on an added ingredient to remove it from the ingredients array
   $('.js-added-ingredient-list').on('click', '.added-ingredient', function(event) {
     console.log("ingredient button clicked");
     var index = $(this).attr('data-index');
@@ -74,16 +77,22 @@ function watchForClicks() {
     displayAddedIngredients();
   })
 
+  //click thumbnail to open a modal with appended details about recipe
   $('.js-results').on('click', ".thumbnail", function(event) {
-    // var videoId = $(this).attr("data-id"); //use the id of the selected video
-    // var video  = "https://www.youtube.com/embed/"+videoId; //link to embed the chosen video
-    // $('#video').attr("src", video);  //place link in the video div
+    console.log(this);
+    var index = $(this).attr('data-index');
+    var data = $(this).attr('data-data')
+    let header = `<img src="${data.hits[index].recipe.image}" alt="${this.recipe.label}">
+                  <h3>${this.recipe.label}</h3>
+                  <h4>by ${this.recipe.source}</h4>`;
+    $('.light').html(header);
     $('.modal').removeClass("hidden");  //then show the div
     // $('.js-search-results').prop("hidden", true);
     // $('h1').prop("hidden", true);
     // $('form').prop("hidden", true);
   })
 
+  //click close button to hide modal and show results page
   $('.close-button').on('click', function(event) {
     $('.modal').addClass("hidden");
     // $('#video').attr("src", "");
