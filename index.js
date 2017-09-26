@@ -94,10 +94,10 @@ function watchForClicks() {
     var label = selectedRecipe.label;
     var source = selectedRecipe.source;
     var ingredients = renderlistInstructions(selectedRecipe.ingredientLines);
-    let content = `<img src="${image}" alt="${label}">
-    <h3>${label}</h3>
-    <h4>by ${source}</h4>
-    <ul>${ingredients}</ul>`;
+    let content = `<img class="detail-photo" src="${image}" alt="${label}">
+      <h3>${label}</h3>
+      <h4>by ${source}</h4>
+      <ul>${ingredients}</ul>`;
     $('.js-modal-content').html(content);
     $('.modal').removeClass("hidden");  //then show the div
     // $('.js-search-results').prop("hidden", true);
@@ -112,6 +112,10 @@ function watchForClicks() {
     // $('.js-search-results').prop("hidden", false);
     // $('h1').prop("hidden", false);
     // $('form').prop("hidden", false);
+  })
+
+  $('.dark').on('click', function(event) {
+    $('.modal').addClass("hidden");
   })
 }
 
