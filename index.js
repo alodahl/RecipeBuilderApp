@@ -1,6 +1,7 @@
 'use strict';
 
 let queryArray = [];
+let recipes = [];
 
 function getDataFromApi(searchTerm , callback) {
   const settings = {
@@ -14,7 +15,10 @@ function getDataFromApi(searchTerm , callback) {
     },
     dataType: 'json',
     type: 'GET',
-    success: callback
+    success: function(data) {
+      recipes = data;
+      displaySearchData(recipes);
+    }
   };
   $.ajax(settings);
 }
@@ -23,28 +27,33 @@ function getDataFromApi(searchTerm , callback) {
 //renders each API recipe as HTML to be displayed
 function renderResult(item, index) {
   // console.log(item);
-  let recipeInstructions = item.recipe.ingredientLines;
-  let ingredientli = [];
-  function renderlistInstructions(array) {
-    for (let i=0; i < array.length; i++) {
-      ingredientli.push(`<li class="instructions">${array[i]}</li>`);
-    }
-  }
+  // let recipeIngredients = item.recipe.ingredientLines;
+  // console.log(recipeIngredients);
+  // let ingredientli = [];
 
-  renderlistInstructions(recipeInstructions);
-  console.log(ingredientli);
-  let recipeResult = `<span class="thumbnail" data-index="${index}" data-image="${item.recipe.image}" data-label="${item.recipe.label}" data-ingredientlist="${ingredientli}" data-source="${item.recipe.source}" >
-    <img src="${item.recipe.image}" alt="${item.recipe.label}">
-    <h3>${item.recipe.label}</h3>
-    <h4>by ${item.recipe.source}</h4>
-    <p>${item.recipe.ingredients.length} ingredients</p></span>`;
+//data-index="${index}" data-image="${item.recipe.image}" data-label="${item.recipe.label}" data-ingredientlist="${ingredientli}" data-source="${item.recipe.source}"
+  // renderlistInstructions(recipeIngredients);
+  // console.log(ingredientli);
+  let recipeResult = `<span class="thumbnail" data-id="${index}">
+  <img src="${item.recipe.image}" alt="${item.recipe.label}">
+  <h3>${item.recipe.label}</h3>
+  <h4>by ${item.recipe.source}</h4>
+  <p>${item.recipe.ingredients.length} ingredients</p></span>`;
   return recipeResult;
+}
+
+function renderlistInstructions(recipeIngredientsArray) {
+let renderedList = "";
+  for (let i=0; i < recipeIngredientsArray.length; i++) {
+    renderedList += `<li class="instructions">${recipeIngredientsArray[i]}</li>`;
+  }
+  return renderedList;
 }
 
 //sends API items to get rendered,
 //then displays them in the dom along with the search results count
 function displaySearchData(data) {
-  console.log(data);
+  // console.log(data);
   const results = data.hits.map((item, index) => renderResult(item, index));
   $('.js-resultNum').text(data.count);
   $('h2').prop("hidden", false);
@@ -90,17 +99,18 @@ function watchForClicks() {
 
   //click thumbnail to open a modal with appended details about recipe
   $('.js-results').on('click', ".thumbnail", function(event) {
-    console.log(this);
-    // var index = $(this).attr('data-index');
+    var index = $(this).attr('data-id');
+    var selectedRecipe = recipes.hits[index].recipe;
+    console.log(selectedRecipe);
     // var data = $(this).attr('data-data');
-    var image = $(this).attr('data-image');
-    var label = $(this).attr('data-label');
-    var source = $(this).attr('data-source');
-    var ingredients = $(this).attr('data-ingredientlist');
+    var image = selectedRecipe.image;
+    var label = selectedRecipe.label;
+    var source = selectedRecipe.source;
+    var ingredients = renderlistInstructions(selectedRecipe.ingredientLines);
     let content = `<img src="${image}" alt="${label}">
-                  <h3>${label}</h3>
-                  <h4>by ${source}</h4>
-                  <ul>${ingredients}</ul>`;
+    <h3>${label}</h3>
+    <h4>by ${source}</h4>
+    <ul>${ingredients}</ul>`;
 
     $('.js-modal-content').html(content);
     $('.modal').removeClass("hidden");  //then show the div
