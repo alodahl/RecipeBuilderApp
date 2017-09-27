@@ -18,6 +18,10 @@ h3, h4, p {
     outline-width: 0;
 }
 
+input {
+  min-width: 190px;
+}
+
 .ingredients {
   background-color: white;
   border: 1px solid black;
@@ -103,8 +107,30 @@ h3, h4, p {
 
 .detail-photo {
   width: 100%;
+  position: relative;
+  bottom: 100px;
 
   /*height: 50%;*/
+}
+
+.js-see-more-results-button {
+  padding: 5px 75px;
+  margin: 20px;
+}
+
+.recipe-link-button {
+  padding: 5px 50px;
+  margin-top: 20px;
+  position: relative;
+  bottom: 100px;
+}
+
+.light h3, .light h4, .light li, .light p {
+    text-align: left;
+    position: relative;
+    bottom: 100px;
+    margin: 0 20px;
+
 }
 
  .hidden {

@@ -10,7 +10,8 @@ function getDataFromApi(searchTerm , callback) {
       q: `${searchTerm} in:ingredients`,
       app_id: '37073675',
       app_key: '46b633f590a05be11cab8a438977deb9',
-      to: 8,
+      from: 0,
+      to: 48,
       part: 'hits'
     },
     dataType: 'json',
@@ -45,9 +46,14 @@ let renderedList = "";
 //then displays them in the dom along with the search results count
 function displaySearchData(data) {
   const results = data.hits.map((item, index) => renderResult(item, index));
+  var index = $('.thumbnail').attr('data-id');
   $('.js-resultNum').text(data.count);
   $('h2').prop("hidden", false);
   $('.js-results').html(results);
+  $('.thumbnail').filter(index > 47).hide();
+  // if (data.count > 48) {
+  //   $('.js-see-more-results-button').prop("hidden", false);
+  // }
 }
 
 function renderIngrButton(item, index) {
@@ -93,16 +99,26 @@ function watchForClicks() {
     var image = selectedRecipe.image;
     var label = selectedRecipe.label;
     var source = selectedRecipe.source;
+    var servings = selectedRecipe.yield;
     var ingredients = renderlistInstructions(selectedRecipe.ingredientLines);
     let content = `<img class="detail-photo" src="${image}" alt="${label}">
       <h3>${label}</h3>
       <h4>by ${source}</h4>
-      <ul>${ingredients}</ul>`;
+      <p>Serves ${servings}</p>
+      <ul>${ingredients}</ul>
+      <button type="button" class="recipe-link-button js-recipe-link-button" data-id="${index}">view recipe directions</button>`;
     $('.js-modal-content').html(content);
     $('.modal').removeClass("hidden");  //then show the div
+    console.log(recipes);
     // $('.js-search-results').prop("hidden", true);
     // $('h1').prop("hidden", true);
     // $('form').prop("hidden", true);
+  })
+
+  $('.js-modal').on('click', ".js-recipe-link-button", function(event) {
+    var index = $(this).attr('data-id');
+    var selectedRecipe = recipes.hits[index].recipe;
+    window.open(`${selectedRecipe.url}`,"_blank",name="Open recipe directions page in new window");
   })
 
   //click close button to hide modal and show results page
@@ -118,5 +134,9 @@ function watchForClicks() {
     $('.modal').addClass("hidden");
   })
 }
+
+// $('.js-see-more-results-button').on('click', event => {
+//   $('#grid li:hidden').slice(0, 5).slideDown();
+// })
 
 $(watchForClicks);
