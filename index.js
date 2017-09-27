@@ -2,6 +2,8 @@
 
 let queryArray = [];
 let recipes = [];
+let firstResult = 0;
+let lastResult = 24;
 
 function getDataFromApi(searchTerm , callback) {
   const settings = {
@@ -10,8 +12,8 @@ function getDataFromApi(searchTerm , callback) {
       q: `${searchTerm} in:ingredients`,
       app_id: '37073675',
       app_key: '46b633f590a05be11cab8a438977deb9',
-      from: 0,
-      to: 48,
+      from: firstResult,
+      to: lastResult,
       part: 'hits'
     },
     dataType: 'json',
@@ -22,6 +24,7 @@ function getDataFromApi(searchTerm , callback) {
     }
   };
   $.ajax(settings);
+  console.log(recipes);
 }
 
 
@@ -51,9 +54,15 @@ function displaySearchData(data) {
   $('h2').prop("hidden", false);
   $('.js-results').html(results);
   $('.thumbnail').filter(index > 47).hide();
-  // if (data.count > 48) {
-  //   $('.js-see-more-results-button').prop("hidden", false);
-  // }
+  if (data.count > 24) {
+    $('.js-see-more-results-button').prop("hidden", false);
+  }
+  if ($('.js-results').is(':empty')){
+    $('.js-see-more-results-button').prop("hidden", true);
+  }
+  if (recipes.length < 24){
+    $('.js-see-more-results-button').prop("hidden", true);
+  }
 }
 
 function renderIngrButton(item, index) {
@@ -82,6 +91,8 @@ function watchForClicks() {
 
   //click on the find recipes button to search for recipe with added ingredients
   $('.js-find-recipes').on('click', event => {
+    firstResult = 0;
+    lastResult = 24;
     getDataFromApi(queryArray, displaySearchData);
   })
 
@@ -108,11 +119,10 @@ function watchForClicks() {
       <ul>${ingredients}</ul>
       <button type="button" class="recipe-link-button js-recipe-link-button" data-id="${index}">view recipe directions</button>`;
     $('.js-modal-content').html(content);
-    $('.modal').removeClass("hidden");  //then show the div
-    console.log(recipes);
-    // $('.js-search-results').prop("hidden", true);
-    // $('h1').prop("hidden", true);
-    // $('form').prop("hidden", true);
+    $('.js-modal').removeClass("hidden");  //then show the div
+    $('header').prop("aria-hidden", true);
+    $('main').prop("aria-hidden", true);
+    $('footer').prop("aria-hidden", true);
   })
 
   $('.js-modal').on('click', ".js-recipe-link-button", function(event) {
@@ -123,20 +133,30 @@ function watchForClicks() {
 
   //click close button to hide modal and show results page
   $('.close-button').on('click', function(event) {
-    $('.modal').addClass("hidden");
-    // $('#video').attr("src", "");
-    // $('.js-search-results').prop("hidden", false);
-    // $('h1').prop("hidden", false);
-    // $('form').prop("hidden", false);
+    $('.js-modal').addClass("hidden");
+    $('header').prop("aria-hidden", false);
+    $('main').prop("aria-hidden", false);
+    $('footer').prop("aria-hidden", false);
   })
 
   $('.dark').on('click', function(event) {
-    $('.modal').addClass("hidden");
+    $('.js-modal').addClass("hidden");
+    $('header').prop("aria-hidden", false);
+    $('main').prop("aria-hidden", false);
+    $('footer').prop("aria-hidden", false);
   })
 }
 
-// $('.js-see-more-results-button').on('click', event => {
-//   $('#grid li:hidden').slice(0, 5).slideDown();
-// })
+$('.js-see-more-results-button').on('click', event => {
+  if (recipes.count < lastResult){
+    firstResult += 24;
+    lastResult = recipes.count;
+    getDataFromApi(queryArray, displaySearchData);
+  } else {
+    firstResult += 24;
+    lastResult += 24;
+    getDataFromApi(queryArray, displaySearchData);
+  }
+})
 
 $(watchForClicks);
