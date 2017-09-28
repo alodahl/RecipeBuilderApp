@@ -38,9 +38,12 @@ input {
    margin: 20px 0;
  }
 
- .added {
+.results {
+  text-align: center;
+}
+ /*.added {
    text-align: left;
- }
+ }*/
 
 .thumbnail {
    display: inline-block;

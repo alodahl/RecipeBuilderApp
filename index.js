@@ -63,6 +63,9 @@ function displaySearchData(data) {
   if (recipes.length < 24){
     $('.js-see-more-results-button').prop("hidden", true);
   }
+  if (recipes.count === 0) {
+    $(".js-results").text("Try removing one ingredient or check your spelling to find some recipes.");
+  }
 }
 
 function renderIngrButton(item, index) {
@@ -87,6 +90,7 @@ function watchForClicks() {
     queryArray.push(query);
     displayAddedIngredients();
     queryTarget.val("");  // clear out the input
+    $('input').prop("placeholder", "add another!")
   });
 
   //click on the find recipes button to search for recipe with added ingredients
@@ -152,10 +156,12 @@ $('.js-see-more-results-button').on('click', event => {
     firstResult += 24;
     lastResult = recipes.count;
     getDataFromApi(queryArray, displaySearchData);
+    $('html, body').animate({ scrollTop: 0 }, 'fast');
   } else {
     firstResult += 24;
     lastResult += 24;
     getDataFromApi(queryArray, displaySearchData);
+    $('html, body').animate({ scrollTop: 0 }, 'fast');
   }
 })
 
