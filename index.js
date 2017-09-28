@@ -13,18 +13,18 @@ function getDataFromApi(searchTerm , callback) {
       app_id: '37073675',
       app_key: '46b633f590a05be11cab8a438977deb9',
       from: firstResult,
-      to: lastResult,
-      part: 'hits'
+      // to: lastResult,
+      // part: 'hits'
     },
     dataType: 'json',
     type: 'GET',
     success: function(data) {
+      console.log(data);
       recipes = data;
       displaySearchData(recipes);
     }
   };
   $.ajax(settings);
-  console.log(recipes);
 }
 
 
@@ -53,14 +53,9 @@ function displaySearchData(data) {
   $('.js-resultNum').text(data.count);
   $('h2').prop("hidden", false);
   $('.js-results').html(results);
-  $('.thumbnail').filter(index > 47).hide();
-  if (data.count > 24) {
+  if (lastResult < data.count) {
     $('.js-see-more-results-button').prop("hidden", false);
-  }
-  if ($('.js-results').is(':empty')){
-    $('.js-see-more-results-button').prop("hidden", true);
-  }
-  if (recipes.length < 24){
+  } else {
     $('.js-see-more-results-button').prop("hidden", true);
   }
   if (recipes.count === 0) {
@@ -124,9 +119,9 @@ function watchForClicks() {
       <button type="button" class="recipe-link-button js-recipe-link-button" data-id="${index}">view recipe directions</button>`;
     $('.js-modal-content').html(content);
     $('.js-modal').removeClass("hidden");  //then show the div
-    $('header').prop("aria-hidden", true);
-    $('main').prop("aria-hidden", true);
-    $('footer').prop("aria-hidden", true);
+    $('header').attr("aria-hidden", "true");
+    $('main').attr("aria-hidden", "true");
+    $('footer').attr("aria-hidden", "true");
   })
 
   $('.js-modal').on('click', ".js-recipe-link-button", function(event) {
@@ -138,26 +133,21 @@ function watchForClicks() {
   //click close button to hide modal and show results page
   $('.close-button').on('click', function(event) {
     $('.js-modal').addClass("hidden");
-    $('header').prop("aria-hidden", false);
-    $('main').prop("aria-hidden", false);
-    $('footer').prop("aria-hidden", false);
+    $('header').attr("aria-hidden", "false");
+    $('main').attr("aria-hidden", "false");
+    $('footer').attr("aria-hidden", "false");
   })
 
   $('.dark').on('click', function(event) {
     $('.js-modal').addClass("hidden");
-    $('header').prop("aria-hidden", false);
-    $('main').prop("aria-hidden", false);
-    $('footer').prop("aria-hidden", false);
+    $('header').attr("aria-hidden", "false");
+    $('main').attr("aria-hidden", "false");
+    $('footer').attr("aria-hidden", "false");
   })
 }
 
 $('.js-see-more-results-button').on('click', event => {
-  if (recipes.count < lastResult){
-    firstResult += 24;
-    lastResult = recipes.count;
-    getDataFromApi(queryArray, displaySearchData);
-    $('html, body').animate({ scrollTop: 0 }, 'fast');
-  } else {
+  if (recipes.count > lastResult){
     firstResult += 24;
     lastResult += 24;
     getDataFromApi(queryArray, displaySearchData);
