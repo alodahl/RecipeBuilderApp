@@ -2,6 +2,7 @@
 
 - hide "show more results" on last page of results
 - style results grid: black gradient towards bottom, text on bottom
+- make site mobile responsive (smallest width: 480px)
 
 ~~- style buttons~~
 ~~- improve modal a11y~~

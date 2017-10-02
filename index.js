@@ -49,7 +49,7 @@ let renderedList = "";
 //then displays them in the dom along with the search results count
 function displaySearchData(data) {
   const results = data.hits.map((item, index) => renderResult(item, index));
-  var index = $('.thumbnail').attr('data-id');
+  let index = $('.thumbnail').attr('data-id');
   $('.js-resultNum').text(data.count);
   $('h2').prop("hidden", false);
   $('.js-results').html(results);
