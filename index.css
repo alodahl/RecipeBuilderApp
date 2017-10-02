@@ -28,6 +28,14 @@ h3, h4, p {
    max-width: 300px;
  }
 
+ input {
+   min-width: 190px;
+   font-size: 16px;
+   text-align: center;
+   padding: 5px;
+   font-family: Eurostile, sans-serif;
+ }
+
  .query {
    border: none;
  }
@@ -36,30 +44,37 @@ h3, h4, p {
     outline-width: 0;
 }
 
-input {
-  min-width: 230px;
-  font-size: 16px;
-  text-align: center;
-  padding: 5px;
-  font-family: Eurostile, sans-serif;
-}
-
 .ingredients {
   background-color: white;
   border: 1px solid black;
   display: inline-block;
   padding: 3px;
 }
+
+.button {
+  box-sizing: border-box;
+  color: white;
+  font-size: 20px;
+  padding: 5px;
+  font-family: Eurostile, sans-serif;
+  background-color: #FF8E32;
+}
+
+.add-ingredient-button {
+  /*background-color: #FF2D31;*/
+  position: relative;
+  top: 2px;
+}
+
  .find-recipes-button {
-   box-sizing: border-box;
    display: block;
    margin: 20px auto;
-   width: 240px;
-   background-color: #FF8E32;
-   color: white;
-   font-size: 20px;
-   padding: 5px;
-   font-family: Eurostile, sans-serif;
+   width: 245px;
+ }
+
+ .added-ingredient {
+   padding: 3px;
+   font-size: 16px;
  }
 
  .added-ingredient-list {
@@ -75,12 +90,12 @@ input {
 
 .thumbnail {
    display: inline-block;
-   padding: 10px;
-   max-width: 95%;
+   /*padding: 10px;*/
  }
 
  .thumbnail img {
    max-width: 95%;
+   /*linear-gradient(rgba(255, 0, 0, 0.45), rgba(255, 0, 0, 0.45);*/
  }
 
 .tagline {
@@ -148,7 +163,6 @@ input {
 .recipe-link-button {
   padding: 5px 50px;
   margin: 20px;
-
 }
 
 .light h3, .light h4, .light li, .light p {

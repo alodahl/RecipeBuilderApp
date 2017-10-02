@@ -1,9 +1,9 @@
 # ToDo:
 
 - hide "show more results" on last page of results
-- style buttons
-- style results grid
+- style results grid: black gradient towards bottom, text on bottom
 
+~~- style buttons~~
 ~~- improve modal a11y~~
 ~~- jump to top of page when "show more results is clicked"~~
 ~~- make "show more results" button~~

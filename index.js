@@ -29,7 +29,7 @@ function getDataFromApi(searchTerm , callback) {
 
 
 function renderResult(item, index) {
-  let recipeResult = `<span class="thumbnail" data-id="${index}">
+  let recipeResult = `<span class="thumbnail col-3" data-id="${index}">
   <img src="${item.recipe.image}" alt="${item.recipe.label}">
   <h3>${item.recipe.label}</h3>
   <h4>by ${item.recipe.source}</h4>
@@ -64,7 +64,7 @@ function displaySearchData(data) {
 }
 
 function renderIngrButton(item, index) {
-  let button = `<button class="added-ingredient" type="button" data-index="${index}">${item} X</button>`;
+  let button = `<button class="added-ingredient button" type="button" data-index="${index}">${item} X</button>`;
   return button;
 }
 
@@ -85,7 +85,7 @@ function watchForClicks() {
     queryArray.push(query);
     displayAddedIngredients();
     queryTarget.val("");  // clear out the input
-    $('input').prop("placeholder", "add another!")
+    $('input').prop("placeholder", "add another or find recipes")
   });
 
   //click on the find recipes button to search for recipe with added ingredients
@@ -116,7 +116,7 @@ function watchForClicks() {
       <h4>by ${source}</h4>
       <p>Serves ${servings}</p>
       <ul>${ingredients}</ul>
-      <button type="button" class="recipe-link-button js-recipe-link-button" data-id="${index}">view recipe directions</button>`;
+      <button type="button" class="recipe-link-button js-recipe-link-button button" data-id="${index}">view recipe directions</button>`;
     $('.js-modal-content').html(content);
     $('.js-modal').removeClass("hidden");  //then show the div
     $('header').attr("aria-hidden", "true");
