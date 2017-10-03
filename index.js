@@ -58,8 +58,10 @@ let renderedList = "";
 //then displays them in the dom along with the search results count
 function displaySearchData(newRecipes, offset) {
   const results = newRecipes.map((item, index) => renderResult(item, offset+index));
-  var index = $('.thumbnail').attr('data-id');
+  let index = $('.thumbnail').attr('data-id');
+  let terms = ` containing "${queryArray}"`
   $('h2').prop("hidden", false);
+  $(".js-user-query-terms").html(terms);
   $('.js-results').append(results);
   if (recipes.count === 0) {
     $(".js-results").text("Try removing one ingredient or check your spelling to find some recipes.");
