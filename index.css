@@ -2,10 +2,10 @@
   border: 1px dotted red;
 }*/
 
+
 body {
   text-align: center;
   margin: 0 auto;
-  margin-top: 0;
   font-family: Eurostile, sans-serif;
   border-radius: 10px;
 }
@@ -22,7 +22,8 @@ h1 {
   font-size: 72px;
   color: white;
   max-width: 500px;
-  margin: 20px auto;
+  margin: auto;
+  padding: 20px;
 }
 
 h3, h4, p {
@@ -83,10 +84,6 @@ h3, h4, p {
  .added-ingredient {
    padding: 3px;
    font-size: 16px;
- }
-
- .added-ingredient-list {
-   margin: 20px 0;
  }
 
 .results {

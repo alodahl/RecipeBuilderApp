@@ -1,9 +1,11 @@
 # ToDo:
 
-- hide "show more results" on last page of results
 - style results grid: black gradient towards bottom, text on bottom
 - make site mobile responsive (smallest width: 480px)
+- add description to homepage
 
+~~- fix white margin on top of page~~
+~~- hide "show more results" on last page of results~~
 ~~- style buttons~~
 ~~- improve modal a11y~~
 ~~- jump to top of page when "show more results is clicked"~~

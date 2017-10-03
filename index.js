@@ -30,7 +30,7 @@ function getDataFromApi(searchTerm , callback) {
       recipes=[...recipes, ...newRecipes];
     },
     error: function(data) {
-      // console.log("stuff happened")
+      console.log("Error: Edamam API could not answer your request.")
     }
   };
   $.ajax(settings);
@@ -57,17 +57,10 @@ let renderedList = "";
 //sends API items to get rendered,
 //then displays them in the dom along with the search results count
 function displaySearchData(newRecipes, offset) {
-  // console.log(recipes.length)
-
   const results = newRecipes.map((item, index) => renderResult(item, offset+index));
   var index = $('.thumbnail').attr('data-id');
   $('h2').prop("hidden", false);
-  $('.js-results').append(results); // TODO: breaks new queries
-  // if (lastResult < data.count) {
-  //   $('.js-see-more-results-button').prop("hidden", false);
-  // } else {
-  //   $('.js-see-more-results-button').prop("hidden", true);
-  // }
+  $('.js-results').append(results);
   if (recipes.count === 0) {
     $(".js-results").text("Try removing one ingredient or check your spelling to find some recipes.");
   }
@@ -118,10 +111,6 @@ function watchForClicks() {
   //click thumbnail to open a modal with appended details about recipe
   $('.js-results').on('click', ".thumbnail", function(event) {
     var index = $(this).attr('data-id');
-
-    // console.log("HERE")
-    // console.log(index)
-    // console.log(recipes)
     var selectedRecipe = recipes[index].recipe;
     var image = selectedRecipe.image;
     var label = selectedRecipe.label;
