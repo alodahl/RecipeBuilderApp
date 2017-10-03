@@ -133,6 +133,7 @@ footer, .push {
 }
 
 .thumbnail {
+  position: relative;
   box-sizing: border-box;
   display: inline-block;
   max-width: 300px;
@@ -143,8 +144,9 @@ footer, .push {
 }
 
 .thumbnail-text {
-  position: relative;
-  top: 210px;
+  position: absolute;
+  bottom: 5px;
+  /*top: 210px;*/
   left: 5px;
 }
 
@@ -156,7 +158,6 @@ footer, .push {
   display: block;
   background-color: white;
   width: 400px;
-  /*height: 600px;*/
   max-width: 95%;
   max-height: 95%;
   position: fixed;

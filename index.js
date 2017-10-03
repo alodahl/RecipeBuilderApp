@@ -38,7 +38,7 @@ function getDataFromApi(searchTerm , callback) {
 
 //<img src="${item.recipe.image}" alt="${item.recipe.label}">
 function renderResult(item, index) {
-  let recipeResult = `<span class="thumbnail col-3" data-id="${index}" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, 1) 50%), url('${item.recipe.image}')";>
+  let recipeResult = `<span class="thumbnail col-3" data-id="${index}" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, 0) 50%,rgba(0, 0, 0, 0.8) 100%, transparent), url('${item.recipe.image}')";>
     <div class="thumbnail-text">
       <h3>${item.recipe.label}</h3>
       <h4>by ${item.recipe.source}</h4>
