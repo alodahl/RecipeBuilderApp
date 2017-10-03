@@ -44,28 +44,19 @@
   width: 50%;
 }
 
-@media screen and (min-width:320px) and (max-width:480px){
-  header {
-    background-image: url("page-header-vegetables-540px-wide.jpg");
-    /*background-position: 100% 100%;*/
-    background-repeat: no-repeat;
-    height: 100%;
-  }
-}
-
-@media screen and (min-width:480px) and (max-width:1000px){
-  header {
-    background-image: url("page-header-vegetables-1000px-wide.jpg");
-    /*background-position: 100% 100%;*/
-    background-repeat: no-repeat;
-    background-size: 100%;
-  }
-}
-
 /* Non-mobile, grid */
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 500px) {
   .col-3 {
     width: 50%;
+  }
+  header {
+    background-image: url("page-header-vegetables-1000px-wide.jpg");
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  header {
+    background-image: url("page-header-vegetables.jpg");
   }
 }
 

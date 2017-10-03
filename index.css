@@ -1,7 +1,10 @@
 /*body * {
   border: 1px dotted red;
 }*/
-
+html, body {
+  height: 100%;
+  margin: 0;
+}
 
 body {
   text-align: center;
@@ -12,8 +15,7 @@ body {
 }
 
 header {
-  background-image: url("page-header-vegetables.jpg");
-  /*background-position: 100% 100%;*/
+  background-image: url("page-header-vegetables-540px-wide.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
 }
@@ -53,15 +55,18 @@ h3, h4, p {
    left: 0;
  }
 
+ footer, .push {
+   height: 36px;
+ }
+
 #wrap {
   min-height: 100%;
+  margin-bottom: -36px; //height of footer-area
 }
  .footer-area {
    background-color: #FF8E32;
    position: relative;
    bottom: 0;
-   /*width: 100%;
-   margin-top: -36px; //height of footer-area*/
  }
 
   .footer-area p {

@@ -30,7 +30,7 @@ function getDataFromApi(searchTerm , callback) {
       recipes=[...recipes, ...newRecipes];
     },
     error: function(data) {
-      console.log("Error: Edamam API could not answer your request.")
+      console.log("Error: Edamam API could not answer your request.");
     }
   };
   $.ajax(settings);
