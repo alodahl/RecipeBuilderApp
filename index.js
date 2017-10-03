@@ -103,6 +103,9 @@ function watchForClicks() {
   $('.js-find-recipes').on('click', event => {
     firstResult = 0;
     lastResult = 24;
+    recipes = [];
+    displayedLastRecipe = false;
+    $('.js-results').html("")
     getDataFromApi(queryArray, displaySearchData);
   })
 
@@ -160,7 +163,6 @@ function watchForClicks() {
     $('footer').attr("aria-hidden", "false");
   })
 }
-
 
 $(window).scroll(function() {
    if($(window).scrollTop() + $(window).height() > $(document).height() - 10) {
