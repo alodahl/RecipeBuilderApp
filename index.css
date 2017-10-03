@@ -1,5 +1,5 @@
 /*body * {
-  border: 1px dotted red;
+border: 1px dotted red;
 }*/
 html, body {
   height: 100%;
@@ -30,51 +30,56 @@ h1 {
 }
 
 h3, h4, p {
-   max-width: 300px;
- }
+  max-width: 300px;
+}
 
- input {
-   min-width: 190px;
-   font-size: 16px;
-   text-align: center;
-   padding: 5px;
-   font-family: Eurostile, sans-serif;
- }
+input {
+  min-width: 190px;
+  font-size: 16px;
+  text-align: center;
+  padding: 5px;
+  font-family: Eurostile, sans-serif;
+}
 
- footer{
-   width: 100%;
-   clear: both;
-   right: 0;
-   bottom: 0;
-   left: 0;
- }
+footer{
+  width: 100%;
+  clear: both;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
 
- footer, .push {
-   height: 36px;
- }
+footer, .push {
+  height: 36px;
+}
 
 #wrap {
   min-height: 100%;
   margin-bottom: -36px; //height of footer-area
 }
- .footer-area {
-   background-color: #FF8E32;
-   position: relative;
-   bottom: 0;
- }
+.footer-area {
+  background-color: #FF8E32;
+  position: relative;
+  bottom: 0;
+}
 
-  .footer-area p {
-    padding: 10px;
-    max-width: 400px;
-    color: white;
-  }
+.footer-area p {
+  padding: 10px;
+  max-width: 400px;
+  color: white;
+}
 
- .query {
-   border: none;
- }
+.tagline {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.query {
+  border: none;
+}
 
 .query:focus {
-    outline-width: 0;
+  outline-width: 0;
 }
 
 .ingredients {
@@ -101,16 +106,16 @@ h3, h4, p {
   top: 1px;
 }
 
- .find-recipes-button {
-   display: block;
-   margin: 20px auto;
-   width: 245px;
- }
+.find-recipes-button {
+  display: block;
+  margin: 20px auto;
+  width: 245px;
+}
 
- .added-ingredient {
-   padding: 3px;
-   font-size: 16px;
- }
+.added-ingredient {
+  padding: 3px;
+  font-size: 16px;
+}
 
 .results {
   margin: 0 auto;
@@ -119,7 +124,6 @@ h3, h4, p {
 
 .welcome-message {
   padding: 40px;
-
 }
 
 .welcome-message h2, .welcome-message p {
@@ -129,23 +133,26 @@ h3, h4, p {
 }
 
 .thumbnail {
-   display: inline-block;
-   height:470px;
-   /*padding: 10px;*/
- }
+  box-sizing: border-box;
+  display: inline-block;
+  max-width: 300px;
+  height: 300px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  color: white;
+}
 
- .thumbnail img {
-   max-width: 95%;
-   border-radius: 5px;
-   /*linear-gradient(rgba(255, 0, 0, 0.45), rgba(255, 0, 0, 0.45);*/
- }
+.thumbnail-text {
+  position: relative;
+  top: 210px;
+  left: 5px;
+}
 
-.tagline {
-   width: 500px;
-   margin: 0 auto;
- }
+.thumbnail-text * {
+  margin: 10px 0;
+}
 
- .light {
+.light {
   display: block;
   background-color: white;
   width: 400px;
@@ -181,13 +188,13 @@ h3, h4, p {
 }
 
 /*.close-button:active {
-  color: black;
-  opacity: 50%;
+color: black;
+opacity: 50%;
 }
 
 .close-button:hover {
-  color: white;
-  opacity: 50%;
+color: white;
+opacity: 50%;
 }*/
 
 .instructions {
@@ -209,11 +216,11 @@ h3, h4, p {
 }
 
 .light h3, .light h4, .light li, .light p {
-    text-align: left;
-    margin: 0 20px;
+  text-align: left;
+  margin: 0 20px;
 
 }
 
- .hidden {
+.hidden {
   display: none;
 }

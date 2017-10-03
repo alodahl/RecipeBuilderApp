@@ -36,13 +36,15 @@ function getDataFromApi(searchTerm , callback) {
   $.ajax(settings);
 }
 
-
+//<img src="${item.recipe.image}" alt="${item.recipe.label}">
 function renderResult(item, index) {
-  let recipeResult = `<span class="thumbnail col-3" data-id="${index}">
-  <img src="${item.recipe.image}" alt="${item.recipe.label}">
-  <h3>${item.recipe.label}</h3>
-  <h4>by ${item.recipe.source}</h4>
-  <p>${item.recipe.ingredients.length} ingredients</p></span>`;
+  let recipeResult = `<span class="thumbnail col-3" data-id="${index}" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, 1) 50%), url('${item.recipe.image}')";>
+    <div class="thumbnail-text">
+      <h3>${item.recipe.label}</h3>
+      <h4>by ${item.recipe.source}</h4>
+      <p>${item.recipe.ingredients.length} ingredients</p>
+    </div>
+  </span>`;
   return recipeResult;
 }
 
