@@ -41,15 +41,9 @@ h3, h4, p {
    font-family: Eurostile, sans-serif;
  }
 
- /*main {
-   overflow: auto;
-   padding-bottom: 36px; //height of footer-area
- }*/
-
  footer{
    width: 100%;
    clear: both;
-   /*position: relative;*/
    right: 0;
    bottom: 0;
    left: 0;
@@ -130,7 +124,7 @@ h3, h4, p {
 
 .welcome-message h2, .welcome-message p {
   margin: 0 auto;
-  max-width: 550px;
+  max-width: 575px;
   padding: 10px;
 }
 
@@ -163,6 +157,7 @@ h3, h4, p {
   left: 50%;
   transform: translate(-50%, -50%);
   overflow: auto;
+  border-radius: 5px;
 
 }
 
