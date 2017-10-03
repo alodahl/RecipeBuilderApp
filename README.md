@@ -6,4 +6,4 @@ description
 
 
 ## Mocks
-![Recipe Builder Site Mock-up](recipe-builder-small.jpg)
+![Recipe Builder Site Mock-up](/recipe-builder-small.jpg)
