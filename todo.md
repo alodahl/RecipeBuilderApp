@@ -2,8 +2,9 @@
 
 - style results grid: black gradient towards bottom, text on bottom
 - make site mobile responsive (smallest width: 480px)
-- add description to homepage
 
+~~- add description to homepage~~
+~~- append queryArray to main section, reflecting user's search terms~~
 ~~- fix white margin on top of page~~
 ~~- hide "show more results" on last page of results~~
 ~~- style buttons~~

@@ -8,6 +8,7 @@ body {
   margin: 0 auto;
   font-family: Eurostile, sans-serif;
   border-radius: 10px;
+  height: 100%;
 }
 
 header {
@@ -38,10 +39,36 @@ h3, h4, p {
    font-family: Eurostile, sans-serif;
  }
 
+ /*main {
+   overflow: auto;
+   padding-bottom: 36px; //height of footer-area
+ }*/
+
  footer{
    width: 100%;
    clear: both;
+   /*position: relative;*/
+   right: 0;
+   bottom: 0;
+   left: 0;
  }
+
+#wrap {
+  min-height: 100%;
+}
+ .footer-area {
+   background-color: #FF8E32;
+   position: relative;
+   bottom: 0;
+   /*width: 100%;
+   margin-top: -36px; //height of footer-area*/
+ }
+
+  .footer-area p {
+    padding: 10px;
+    max-width: 400px;
+    color: white;
+  }
 
  .query {
    border: none;
@@ -87,12 +114,20 @@ h3, h4, p {
  }
 
 .results {
+  margin: 0 auto;
   text-align: left;
 }
 
- /*.added {
-   text-align: left;
- }*/
+.welcome-message {
+  padding: 40px;
+
+}
+
+.welcome-message h2, .welcome-message p {
+  margin: 0 auto;
+  max-width: 550px;
+  padding: 10px;
+}
 
 .thumbnail {
    display: inline-block;

@@ -100,6 +100,7 @@ function watchForClicks() {
     recipes = [];
     displayedLastRecipe = false;
     $('.js-results').html("")
+    $('.js-welcome-message').attr("hidden", "true");
     getDataFromApi(queryArray, displaySearchData);
   })
 
