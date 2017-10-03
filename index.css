@@ -141,6 +141,7 @@ footer, .push {
   background-repeat: no-repeat;
   background-size: 100%;
   color: white;
+  border-radius: 5px;
 }
 
 .thumbnail-text {
