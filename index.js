@@ -3,7 +3,10 @@
 let queryArray = [];
 let recipes = [];
 let firstResult = 0;
-let lastResult = 24;
+let lastResult = 0;
+let displayedLastRecipe = false;
+
+// modal will breaks
 
 function getDataFromApi(searchTerm , callback) {
   const settings = {
@@ -13,14 +16,17 @@ function getDataFromApi(searchTerm , callback) {
       app_id: '37073675',
       app_key: '46b633f590a05be11cab8a438977deb9',
       from: firstResult,
-      // to: lastResult,
-      // part: 'hits'
+       to: lastResult
     },
     dataType: 'json',
     type: 'GET',
     success: function(data) {
       console.log(data);
-      recipes = data;
+      recipes=[...recipes, ...data.hits];
+      if(recipes.length<1){
+        displayedLastRecipe = true;
+      }
+
       displaySearchData(recipes);
     }
   };
@@ -47,17 +53,19 @@ let renderedList = "";
 
 //sends API items to get rendered,
 //then displays them in the dom along with the search results count
-function displaySearchData(data) {
-  const results = data.hits.map((item, index) => renderResult(item, index));
+function displaySearchData(recipes) {
+  console.log(recipes.length)
+
+  const results = recipes.map((item, index) => renderResult(item, index));
   var index = $('.thumbnail').attr('data-id');
-  $('.js-resultNum').text(data.count);
+
   $('h2').prop("hidden", false);
-  $('.js-results').html(results);
-  if (lastResult < data.count) {
-    $('.js-see-more-results-button').prop("hidden", false);
-  } else {
-    $('.js-see-more-results-button').prop("hidden", true);
-  }
+  $('.js-results').append(results); // TODO: breaks new queries
+  // if (lastResult < data.count) {
+  //   $('.js-see-more-results-button').prop("hidden", false);
+  // } else {
+  //   $('.js-see-more-results-button').prop("hidden", true);
+  // }
   if (recipes.count === 0) {
     $(".js-results").text("Try removing one ingredient or check your spelling to find some recipes.");
   }
@@ -105,7 +113,11 @@ function watchForClicks() {
   //click thumbnail to open a modal with appended details about recipe
   $('.js-results').on('click', ".thumbnail", function(event) {
     var index = $(this).attr('data-id');
-    var selectedRecipe = recipes.hits[index].recipe;
+
+    console.log("HERE")
+    console.log(index)
+    console.log(recipes)
+    var selectedRecipe = recipes[index].recipe;
     var image = selectedRecipe.image;
     var label = selectedRecipe.label;
     var source = selectedRecipe.source;
@@ -126,7 +138,7 @@ function watchForClicks() {
 
   $('.js-modal').on('click', ".js-recipe-link-button", function(event) {
     var index = $(this).attr('data-id');
-    var selectedRecipe = recipes.hits[index].recipe;
+    var selectedRecipe = recipes[index].recipe;
     window.open(`${selectedRecipe.url}`,"_blank",name="Open recipe directions page in new window");
   })
 
@@ -146,13 +158,17 @@ function watchForClicks() {
   })
 }
 
-$('.js-see-more-results-button').on('click', event => {
-  if (recipes.count > lastResult){
-    firstResult += 24;
-    lastResult += 24;
-    getDataFromApi(queryArray, displaySearchData);
-    $('html, body').animate({ scrollTop: 0 }, 'fast');
-  }
-})
+
+$(window).scroll(function() {
+   if($(window).scrollTop() + $(window).height() > $(document).height() - 10) {
+
+       if (!displayedLastRecipe){
+         console.log("load more")
+         firstResult += 24;
+         lastResult += 24;
+         getDataFromApi(queryArray, displaySearchData);
+       }
+   }
+});
 
 $(watchForClicks);

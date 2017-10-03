@@ -90,6 +90,7 @@ h3, h4, p {
 
 .thumbnail {
    display: inline-block;
+   height:470px;
    /*padding: 10px;*/
  }
 
