@@ -61,7 +61,6 @@ function displaySearchData(newRecipes, offset) {
 
   const results = newRecipes.map((item, index) => renderResult(item, offset+index));
   var index = $('.thumbnail').attr('data-id');
-
   $('h2').prop("hidden", false);
   $('.js-results').append(results); // TODO: breaks new queries
   // if (lastResult < data.count) {

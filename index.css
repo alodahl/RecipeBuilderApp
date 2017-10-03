@@ -7,6 +7,7 @@ body {
   margin: 0 auto;
   margin-top: 0;
   font-family: Eurostile, sans-serif;
+  border-radius: 10px;
 }
 
 header {
@@ -36,6 +37,11 @@ h3, h4, p {
    font-family: Eurostile, sans-serif;
  }
 
+ footer{
+   width: 100%;
+   clear: both;
+ }
+
  .query {
    border: none;
  }
@@ -49,6 +55,7 @@ h3, h4, p {
   border: 1px solid black;
   display: inline-block;
   padding: 3px;
+  border-radius: 5px;
 }
 
 .button {
@@ -58,12 +65,13 @@ h3, h4, p {
   padding: 5px;
   font-family: Eurostile, sans-serif;
   background-color: #FF8E32;
+  border-radius: 5px;
 }
 
 .add-ingredient-button {
   /*background-color: #FF2D31;*/
   position: relative;
-  top: 2px;
+  top: 1px;
 }
 
  .find-recipes-button {
@@ -82,8 +90,9 @@ h3, h4, p {
  }
 
 .results {
-  text-align: center;
+  text-align: left;
 }
+
  /*.added {
    text-align: left;
  }*/
@@ -96,6 +105,7 @@ h3, h4, p {
 
  .thumbnail img {
    max-width: 95%;
+   border-radius: 5px;
    /*linear-gradient(rgba(255, 0, 0, 0.45), rgba(255, 0, 0, 0.45);*/
  }
 
@@ -138,7 +148,7 @@ h3, h4, p {
   height: 30px;
 }
 
-.close-button:active {
+/*.close-button:active {
   color: black;
   opacity: 50%;
 }
@@ -146,7 +156,7 @@ h3, h4, p {
 .close-button:hover {
   color: white;
   opacity: 50%;
-}
+}*/
 
 .instructions {
   text-align: left;
@@ -156,7 +166,7 @@ h3, h4, p {
   width: 100%;
 }
 
-.js-see-more-results-button {
+.see-more-results-button {
   padding: 5px 75px;
   margin: 20px;
 }
@@ -174,15 +184,4 @@ h3, h4, p {
 
  .hidden {
   display: none;
-}
-
-@media only screen and(max-width: 600px) {
-  body {
-    width: 100%;
-  }
-
-  /*.light {
-    max-width: 95%;
-    margin: 5% 5%;
-  }*/
 }
