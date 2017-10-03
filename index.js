@@ -21,13 +21,16 @@ function getDataFromApi(searchTerm , callback) {
     dataType: 'json',
     type: 'GET',
     success: function(data) {
-      console.log(data);
-      recipes=[...recipes, ...data.hits];
-      if(recipes.length<1){
+      let newRecipes = data.hits;
+
+      if(newRecipes.length<1){
         displayedLastRecipe = true;
       }
-
-      displaySearchData(recipes);
+      displaySearchData(newRecipes, recipes.length);
+      recipes=[...recipes, ...newRecipes];
+    },
+    error: function(data) {
+      // console.log("stuff happened")
     }
   };
   $.ajax(settings);
@@ -53,10 +56,10 @@ let renderedList = "";
 
 //sends API items to get rendered,
 //then displays them in the dom along with the search results count
-function displaySearchData(recipes) {
-  console.log(recipes.length)
+function displaySearchData(newRecipes, offset) {
+  // console.log(recipes.length)
 
-  const results = recipes.map((item, index) => renderResult(item, index));
+  const results = newRecipes.map((item, index) => renderResult(item, offset+index));
   var index = $('.thumbnail').attr('data-id');
 
   $('h2').prop("hidden", false);
@@ -114,9 +117,9 @@ function watchForClicks() {
   $('.js-results').on('click', ".thumbnail", function(event) {
     var index = $(this).attr('data-id');
 
-    console.log("HERE")
-    console.log(index)
-    console.log(recipes)
+    // console.log("HERE")
+    // console.log(index)
+    // console.log(recipes)
     var selectedRecipe = recipes[index].recipe;
     var image = selectedRecipe.image;
     var label = selectedRecipe.label;
@@ -162,7 +165,7 @@ function watchForClicks() {
 $(window).scroll(function() {
    if($(window).scrollTop() + $(window).height() > $(document).height() - 10) {
 
-       if (!displayedLastRecipe){
+       if (!displayedLastRecipe && lastResult<100){
          console.log("load more")
          firstResult += 24;
          lastResult += 24;
