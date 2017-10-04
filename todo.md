@@ -1,10 +1,10 @@
 # ToDo:
 
 - make site mobile responsive (smallest width: 480px)
-- center results
 - welcome page: screenshots and guide
 - match modal to thumbnail style
 
+~~- center results~~
 ~~- make a readme~~
 ~~- style results grid: black gradient towards bottom, text on bottom~~
 ~~- fix footer to window bottom~~

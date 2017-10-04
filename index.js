@@ -122,10 +122,13 @@ function watchForClicks() {
     var source = selectedRecipe.source;
     var servings = selectedRecipe.yield;
     var ingredients = renderlistInstructions(selectedRecipe.ingredientLines);
-    let content = `<img class="detail-photo" src="${image}" alt="${label}">
-      <h3>${label}</h3>
-      <h4>by ${source}</h4>
-      <p>Serves ${servings}</p>
+    let content = `<div class="detail-photo" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, 0) 50%,rgba(0, 0, 0, 0.8) 100%, transparent), url('${image}')">
+        <div class="detail-text">
+          <h3>${label}</h3>
+          <h4>by ${source}</h4>
+        </div>
+      </div>
+      <p class="servings">Serves ${servings}</p>
       <ul>${ingredients}</ul>
       <button type="button" class="recipe-link-button js-recipe-link-button button" data-id="${index}">view recipe directions</button>`;
     $('.js-modal-content').html(content);
