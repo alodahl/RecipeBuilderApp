@@ -36,21 +36,57 @@
   header {
     background-image: url("page-header-vegetables-1000px-wide.jpg");
   }
+  .welcome-message {
+    position: relative;
+  }
+
+  .devices-image {
+    width: 50%;
+    float: right;
+  }
+
+  .message {
+    float: left;
+    width: 50%;
+    padding: 30px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
 }
 
-@media only screen and (max-width: 455px) {
-  //make title, form and margins smaller
+@media only screen and (min-width: 500px) {
+  .title {
+    font-family: Superclarendon, serif;
+    font-size: 72px;
+    color: white;
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+  }
 }
 
 @media only screen and (max-width: 777px) {
   .title {
-    font-size: 36px;
+    font-size: 50px;
+  }
+  .message p {
+    font-size: 16px;
   }
 }
 
 @media only screen and (min-width: 1000px) {
   header {
     background-image: url("page-header-vegetables.jpg");
+  }
+
+  .title {
+    font-size: 72px;
+  }
+
+  .message p {
+    font-size: 20px;
   }
 }
 

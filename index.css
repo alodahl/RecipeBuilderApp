@@ -21,7 +21,7 @@ header {
   background-size: 100%;
 }
 
-h1 {
+.title {
   font-family: Superclarendon, serif;
   font-size: 72px;
   color: white;
@@ -40,6 +40,10 @@ input {
   text-align: center;
   padding: 5px;
   font-family: Eurostile, sans-serif;
+}
+
+main {
+  position: relative;
 }
 
 footer{
@@ -118,13 +122,43 @@ footer, .push {
   font-size: 16px;
 }
 
+.header-hr {
+  margin: 0;
+}
+
 .results {
   display: block;
   margin: 0 auto;
 }
 
+.devices-image {
+  width: 100%;
+  /*width: 50%;*/
+  /*float: right;*/
+}
+
+.message {
+  /*float: left;*/
+  /*width: 50%;*/
+  padding: 30px 30px;
+  /*position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);*/
+}
+
+.message p {
+  font-size: 20px;
+}
+
 .welcome-message {
-  padding: 40px;
+  /*padding: 40px;*/
+  position: relative;
+  background-color: #FFDC60;
+  background-size: cover;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  overflow: auto;
 }
 
 .welcome-message h2, .welcome-message p {
