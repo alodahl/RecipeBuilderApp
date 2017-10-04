@@ -65,7 +65,7 @@ function displaySearchData(newRecipes, offset) {
   $('h2').prop("hidden", false);
   $(".js-user-query-terms").html(terms);
   $('.js-results').append(results);
-  if (recipes.count === 0) {
+  if (newRecipes.length === 0) {
     $(".js-results").text("Try removing one ingredient or check your spelling to find some recipes.");
   }
 }
