@@ -9,4 +9,4 @@ Recipe Builder was a response to the need to be creative with ingredients I alre
 Recipe Builder employs HTML, CSS styling, JavaScript, jQuery and AJAX to retrieve and display API data.
 
 ## Mocks
-![Recipe Builder Site Mock-up](recipe-builder-mockup.jpg)
+![Recipe Builder Site Mock-up](recipe-builder-mockup2.jpg)
