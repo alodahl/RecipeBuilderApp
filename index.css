@@ -13,6 +13,7 @@ body {
   border-radius: 10px;
   height: 100%;
   min-width: 455px;
+  color: #4F4F4F;
 }
 
 header {
@@ -159,6 +160,7 @@ footer, .push {
   box-sizing: border-box;
   margin-bottom: 0;
   overflow: auto;
+  color: black;
 }
 
 .welcome-message h2, .welcome-message p {
