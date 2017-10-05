@@ -132,6 +132,11 @@ footer, .push {
   margin: 0 auto;
 }
 
+#no-results-message {
+  text-align: center;
+  margin: 0 auto;
+}
+
 .devices-image {
   width: 100%;
   /*width: 50%;*/

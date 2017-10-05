@@ -65,8 +65,8 @@ function displaySearchData(newRecipes, offset) {
   $('.user-results-message').removeClass("hidden");
   $(".js-user-query-terms").html(terms);
   $('.js-results').append(results);
-  if (newRecipes.length == 0) {
-    $(".no-results-message").removeClass("hidden");
+  if (newRecipes.length === 0) {
+    $("#no-results-message").removeClass("hidden");
     // $(".js-results").text("Try removing one ingredient or check your spelling to find some recipes.");
   }
 }
@@ -104,6 +104,7 @@ function watchForClicks() {
     displayedLastRecipe = false;
     $('.js-results').html("")
     $('.js-welcome-message').attr("hidden", "true");
+    $("#no-results-message").addClass("hidden");
     getDataFromApi(queryArray, displaySearchData);
   })
 
