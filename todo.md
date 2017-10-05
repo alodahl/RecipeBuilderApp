@@ -1,6 +1,6 @@
 # ToDo:
 
-- make site mobile responsive (smallest width: 480px)
+- make site mobile responsive (smallest width: 480px) relying on vegetables image height instead of width?
 
 ~~- match modal to thumbnail style (try min-width max-width)~~
 ~~- welcome page: screenshots and guide~~
