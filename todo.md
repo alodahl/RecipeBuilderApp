@@ -1,9 +1,9 @@
 # ToDo:
 
 - make site mobile responsive (smallest width: 480px)
-- welcome page: screenshots and guide
-- match modal to thumbnail style
 
+~~- match modal to thumbnail style (try min-width max-width)~~
+~~- welcome page: screenshots and guide~~
 ~~- center results~~
 ~~- make a readme~~
 ~~- style results grid: black gradient towards bottom, text on bottom~~

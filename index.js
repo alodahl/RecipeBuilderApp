@@ -123,7 +123,7 @@ function watchForClicks() {
     var source = selectedRecipe.source;
     var servings = selectedRecipe.yield;
     var ingredients = renderlistInstructions(selectedRecipe.ingredientLines);
-    let content = `<div class="detail-photo" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, 0) 50%,rgba(0, 0, 0, 0.8) 100%, transparent), url('${image}') no-repeat">
+    let content = `<div class="detail-photo" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, 0) 50%,rgba(0, 0, 0, 0.8) 100%, transparent), url('${image}'); background-size: cover; no-repeat">
         <div class="detail-text">
           <h3>${label}</h3>
           <h4>by ${source}</h4>
