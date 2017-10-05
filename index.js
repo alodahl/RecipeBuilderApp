@@ -58,7 +58,6 @@ function renderlistInstructions(recipeIngredientsArray) {
 //sends API items to get rendered,
 //then displays them in the dom along with the search results count
 function displaySearchData(newRecipes, offset) {
-  console.log("Here");
   const results = newRecipes.map((item, index) => renderResult(item, offset+index));
   let index = $('.thumbnail').attr('data-id');
   let terms = ` containing "${queryArray}"`
