@@ -56,7 +56,7 @@ footer{
 }
 
 footer, .push {
-  height: 36px;
+  height: 36px; //height of footer-area, .push part of sticky footer
 }
 
 #wrap {
@@ -107,7 +107,6 @@ footer, .push {
 }
 
 .add-ingredient-button {
-  /*background-color: #FF2D31;*/
   position: relative;
   top: 1px;
 }
@@ -139,18 +138,10 @@ footer, .push {
 
 .devices-image {
   width: 100%;
-  /*width: 50%;*/
-  /*float: right;*/
 }
 
 .message {
-  /*float: left;*/
-  /*width: 50%;*/
   padding: 30px 30px;
-  /*position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);*/
 }
 
 .message p {
@@ -158,7 +149,6 @@ footer, .push {
 }
 
 .welcome-message {
-  /*padding: 40px;*/
   position: relative;
   background-color: #FFDC60;
   background-size: cover;
@@ -226,7 +216,6 @@ footer, .push {
   transform: translate(-50%, -50%);
   overflow: auto;
   border-radius: 5px;
-
 }
 
 .dark {
@@ -237,7 +226,6 @@ footer, .push {
   background-color: black;
   opacity: 0.5;
   position: fixed;
-
 }
 
 .close-button {
@@ -278,5 +266,5 @@ footer, .push {
 }
 
 /*.hidden {
-  display: none;
+display: none;
 }*/

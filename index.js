@@ -6,8 +6,6 @@ let firstResult = 0;
 let lastResult = 0;
 let displayedLastRecipe = false;
 
-// modal will breaks
-
 function getDataFromApi(searchTerm , callback) {
   const settings = {
     url: 'https://api.edamam.com/search',
@@ -16,16 +14,15 @@ function getDataFromApi(searchTerm , callback) {
       app_id: '37073675',
       app_key: '46b633f590a05be11cab8a438977deb9',
       from: firstResult,
-       to: lastResult
+      to: lastResult
     },
     dataType: 'json',
     type: 'GET',
     success: function(data) {
       let newRecipes = data.hits;
-
       if(newRecipes.length<1){
         displayedLastRecipe = true;
-      }
+      } //display new array of search results unless the new array is empty
       displaySearchData(newRecipes, recipes.length);
       recipes=[...recipes, ...newRecipes];
     },
@@ -36,20 +33,22 @@ function getDataFromApi(searchTerm , callback) {
   $.ajax(settings);
 }
 
-//<img src="${item.recipe.image}" alt="${item.recipe.label}">
+//renders recipe results and returns them to displaySearchData()
 function renderResult(item, index) {
   let recipeResult = `<span class="thumbnail col-3" data-id="${index}" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, 0) 50%,rgba(0, 0, 0, 0.8) 100%, transparent), url('${item.recipe.image}')";>
-    <div class="thumbnail-text">
-      <h3>${item.recipe.label}</h3>
-      <h4>by ${item.recipe.source}</h4>
-      <p>${item.recipe.ingredients.length} ingredients</p>
-    </div>
+  <div class="thumbnail-text">
+  <h3>${item.recipe.label}</h3>
+  <h4>by ${item.recipe.source}</h4>
+  <p>${item.recipe.ingredients.length} ingredients</p>
+  </div>
   </span>`;
   return recipeResult;
 }
 
+//renders recipe ingredients as a list and returns string to
+//thumbnail click event listener to be displayed in modal
 function renderlistInstructions(recipeIngredientsArray) {
-let renderedList = "";
+  let renderedList = "";
   for (let i=0; i < recipeIngredientsArray.length; i++) {
     renderedList += `<li class="instructions">${recipeIngredientsArray[i]}</li>`;
   }
@@ -71,13 +70,14 @@ function displaySearchData(newRecipes, offset) {
   }
 }
 
+//renders queryArray items as ingredient name buttons
 function renderIngrButton(item, index) {
   let button = `<button class="added-ingredient button" type="button" data-index="${index}">${item} X</button>`;
   return button;
 }
 
-//sends submitted ingredients to be rendered,
-//then adds them to page as buttons
+//sends submitted ingredients array to be rendered
+//as buttons, then adds them to page
 function displayAddedIngredients() {
   const ingredients = queryArray.map((item, index) => renderIngrButton(item, index));
   $('.js-added-ingredient-list').html(ingredients);
@@ -125,14 +125,14 @@ function watchForClicks() {
     var servings = selectedRecipe.yield;
     var ingredients = renderlistInstructions(selectedRecipe.ingredientLines);
     let content = `<div class="detail-photo" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, 0) 50%,rgba(0, 0, 0, 0.8) 100%, transparent), url('${image}'); background-size: cover; no-repeat">
-        <div class="detail-text">
-          <h3>${label}</h3>
-          <h4>by ${source}</h4>
-        </div>
-      </div>
-      <p class="servings">Serves ${servings}</p>
-      <ul>${ingredients}</ul>
-      <button type="button" class="recipe-link-button js-recipe-link-button button" data-id="${index}">view recipe directions</button>`;
+    <div class="detail-text">
+    <h3>${label}</h3>
+    <h4>by ${source}</h4>
+    </div>
+    </div>
+    <p class="servings">Serves ${servings}</p>
+    <ul>${ingredients}</ul>
+    <button type="button" class="recipe-link-button js-recipe-link-button button" data-id="${index}">view recipe directions</button>`;
     $('.js-modal-content').html(content);
     $('.js-modal').removeClass("hidden");  //then show the div
     $('header').attr("aria-hidden", "true");
@@ -140,6 +140,8 @@ function watchForClicks() {
     $('footer').attr("aria-hidden", "true");
   })
 
+  //when "view recipe directions" button is clicked,
+  //open new window with recipe's original url
   $('.js-modal').on('click', ".js-recipe-link-button", function(event) {
     var index = $(this).attr('data-id');
     var selectedRecipe = recipes[index].recipe;
@@ -154,6 +156,7 @@ function watchForClicks() {
     $('footer').attr("aria-hidden", "false");
   })
 
+  //click off light modal to hide modal and return to results page
   $('.dark').on('click', function(event) {
     $('.js-modal').addClass("hidden");
     $('header').attr("aria-hidden", "false");
@@ -162,16 +165,17 @@ function watchForClicks() {
   })
 }
 
+//when user scrolls within 10px of bottom of results,
+//if there are more results to show, load 24 more results
 $(window).scroll(function() {
-   if($(window).scrollTop() + $(window).height() > $(document).height() - 10) {
-
-       if (!displayedLastRecipe && lastResult<100){
-         console.log("load more")
-         firstResult += 24;
-         lastResult += 24;
-         getDataFromApi(queryArray, displaySearchData);
-       }
-   }
+  if($(window).scrollTop() + $(window).height() > $(document).height() - 10) {
+    if (!displayedLastRecipe && lastResult<100){
+      console.log("load more")
+      firstResult += 24;
+      lastResult += 24;
+      getDataFromApi(queryArray, displaySearchData);
+    }
+  }
 });
 
 $(watchForClicks);

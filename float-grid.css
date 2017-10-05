@@ -20,40 +20,15 @@
 }
 
 .col-3 {
-  /*float: left;*/
   width: 100%;
   margin: 2.0833333%;
 }
 
- /*Mobile defaults */
-
-
 /* Non-mobile, grid */
 @media only screen and (min-width: 500px) {
-  /*.col-3 {
-    width: 50%;
-  }*/
   header {
     background-image: url("page-header-vegetables-1000px-wide.jpg");
   }
-  /*.welcome-message {
-    position: relative;
-  }
-
-  .devices-image {
-    width: 50%;
-    float: right;
-  }
-
-  .message {
-    float: left;
-    width: 50%;
-    padding: 30px;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-  }*/
 }
 
 @media only screen and (min-width: 500px) {
@@ -92,15 +67,6 @@
     transform: translateY(-50%);
   }
 }
-
-/*@media only screen and (max-width: 777px) {
-  .title {
-    font-size: 50px;
-  }
-  .message p {
-    font-size: 16px;
-  }
-}*/
 
 @media only screen and (min-width: 1000px) {
   header {
