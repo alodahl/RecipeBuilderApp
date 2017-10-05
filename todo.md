@@ -1,8 +1,12 @@
 # ToDo:
 
-- style results grid: black gradient towards bottom, text on bottom
 - make site mobile responsive (smallest width: 480px)
+- welcome page: screenshots and guide
+- match modal to thumbnail style
 
+~~- center results~~
+~~- make a readme~~
+~~- style results grid: black gradient towards bottom, text on bottom~~
 ~~- fix footer to window bottom~~
 ~~- add description to homepage~~
 ~~- append queryArray to main section, reflecting user's search terms~~

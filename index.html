@@ -9,7 +9,7 @@
 <body>
   <div id="wrap">
     <header role="header">
-      <h1>recipe builder</h1>
+      <h1 class="title">recipe builder</h1>
       <form class="ingr-search-form js-ingr-search-form" action="index.html" aria-live="assertive">
         <div class="ingredients">
           <span class="js-added-ingredient-list added-ingredient-list"></span>
@@ -18,22 +18,25 @@
         <button class="add-ingredient-button button" type="submit" name="add-ingredient-button">add</button>
         <button class="js-find-recipes find-recipes-button button" type="button" name="search-ingredient">find recipes</button>
       </form>
-      <hr>
+      <hr class="header-hr">
     </header>
     <main role="main" aria-live="assertive">
       <h2 hidden>Here are some recipes<span class="js-user-query-terms"></span>:</h2>
       <div class="js-welcome-message welcome-message">
-        <h2>Welcome to Recipe Builder!</h2>
-        <p>Have ingredients, but not sure what to make?  Type an ingredient and press "add".  Add another, or click a name to subtract. When you are ready, press "find recipes".</p>
+        <span class="message">
+          <h2>Welcome to Recipe Builder!</h2>
+          <p>Have ingredients, but not sure what to make?  Type an ingredient and press "add".  Add another, or click a name to subtract. When you are ready, press "find recipes".</p>
+        </span>
+        <img class="devices-image" src="Recipe-Builder-on-iPhone-iPad.png" alt="Image of Recipe Builder App on iphone and ipad">
       </div>
       <div class="results js-results row"></div>
     </main>
     <div class="modal js-modal hidden">
       <div class="dark"></div>
       <div class="light">
+        <div class="js-modal-content modal-content"></div>
         <img class="close-button" role="button"
         src="http://downloadicons.net/sites/default/files/multiplication-sign-icon-33109.png" alt="click to exit window">
-        <div class="js-modal-content"></div>
       </div>
     </div>
     <div class="push"></div>

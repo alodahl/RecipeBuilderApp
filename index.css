@@ -1,5 +1,5 @@
 /*body * {
-  border: 1px dotted red;
+border: 1px dotted red;
 }*/
 html, body {
   height: 100%;
@@ -12,15 +12,16 @@ body {
   font-family: Eurostile, sans-serif;
   border-radius: 10px;
   height: 100%;
+  min-width: 455px;
 }
 
 header {
-  background-image: url("page-header-vegetables-540px-wide.jpg");
+  background-image: url("page-header-vegetables-1000px-wide.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
 }
 
-h1 {
+.title {
   font-family: Superclarendon, serif;
   font-size: 72px;
   color: white;
@@ -30,51 +31,60 @@ h1 {
 }
 
 h3, h4, p {
-   max-width: 300px;
- }
+  max-width: 300px;
+}
 
- input {
-   min-width: 190px;
-   font-size: 16px;
-   text-align: center;
-   padding: 5px;
-   font-family: Eurostile, sans-serif;
- }
+input {
+  min-width: 190px;
+  font-size: 16px;
+  text-align: center;
+  padding: 5px;
+  font-family: Eurostile, sans-serif;
+}
 
- footer{
-   width: 100%;
-   clear: both;
-   right: 0;
-   bottom: 0;
-   left: 0;
- }
+main {
+  position: relative;
+}
 
- footer, .push {
-   height: 36px;
- }
+footer{
+  width: 100%;
+  clear: both;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+footer, .push {
+  height: 36px;
+}
 
 #wrap {
   min-height: 100%;
   margin-bottom: -36px; //height of footer-area
 }
- .footer-area {
-   background-color: #FF8E32;
-   position: relative;
-   bottom: 0;
- }
+.footer-area {
+  background-color: #FF8E32;
+  position: relative;
+  bottom: 0;
+}
 
-  .footer-area p {
-    padding: 10px;
-    max-width: 400px;
-    color: white;
-  }
+.footer-area p {
+  padding: 10px;
+  max-width: 400px;
+  color: white;
+}
 
- .query {
-   border: none;
- }
+.tagline {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.query {
+  border: none;
+}
 
 .query:focus {
-    outline-width: 0;
+  outline-width: 0;
 }
 
 .ingredients {
@@ -101,25 +111,54 @@ h3, h4, p {
   top: 1px;
 }
 
- .find-recipes-button {
-   display: block;
-   margin: 20px auto;
-   width: 245px;
- }
+.find-recipes-button {
+  display: block;
+  margin: 20px auto;
+  width: 245px;
+}
 
- .added-ingredient {
-   padding: 3px;
-   font-size: 16px;
- }
+.added-ingredient {
+  padding: 3px;
+  font-size: 16px;
+}
+
+.header-hr {
+  margin: 0;
+}
 
 .results {
+  display: block;
   margin: 0 auto;
-  text-align: left;
+}
+
+.devices-image {
+  width: 100%;
+  /*width: 50%;*/
+  /*float: right;*/
+}
+
+.message {
+  /*float: left;*/
+  /*width: 50%;*/
+  padding: 30px 30px;
+  /*position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);*/
+}
+
+.message p {
+  font-size: 20px;
 }
 
 .welcome-message {
-  padding: 40px;
-
+  /*padding: 40px;*/
+  position: relative;
+  background-color: #FFDC60;
+  background-size: cover;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  overflow: auto;
 }
 
 .welcome-message h2, .welcome-message p {
@@ -129,27 +168,44 @@ h3, h4, p {
 }
 
 .thumbnail {
-   display: inline-block;
-   height:470px;
-   /*padding: 10px;*/
- }
+  position: relative;
+  box-sizing: border-box;
+  display: inline-block;
+  max-width: 300px;
+  height: 300px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  color: white;
+  border-radius: 5px;
+  text-align: left;
+}
 
- .thumbnail img {
-   max-width: 95%;
-   border-radius: 5px;
-   /*linear-gradient(rgba(255, 0, 0, 0.45), rgba(255, 0, 0, 0.45);*/
- }
+.thumbnail-text, .detail-text {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+}
 
-.tagline {
-   width: 500px;
-   margin: 0 auto;
- }
+.detail-text {
+  bottom: 10px;
+}
 
- .light {
+.detail-text * {
+  margin: 10px 0;
+}
+
+.thumbnail-text * {
+  margin: 10px 0;
+}
+
+.servings {
+  padding-left: 5px;
+}
+
+.light {
   display: block;
   background-color: white;
   width: 400px;
-  /*height: 600px;*/
   max-width: 95%;
   max-height: 95%;
   position: fixed;
@@ -180,22 +236,19 @@ h3, h4, p {
   height: 30px;
 }
 
-/*.close-button:active {
-  color: black;
-  opacity: 50%;
-}
-
-.close-button:hover {
-  color: white;
-  opacity: 50%;
-}*/
-
 .instructions {
   text-align: left;
 }
 
 .detail-photo {
+  position: relative;
   width: 100%;
+  height: 400px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  border-radius: 5px;
+  margin-bottom: 10px;
 }
 
 .see-more-results-button {
@@ -209,11 +262,11 @@ h3, h4, p {
 }
 
 .light h3, .light h4, .light li, .light p {
-    text-align: left;
-    margin: 0 20px;
+  text-align: left;
+  margin: 0 20px;
 
 }
 
- .hidden {
+.hidden {
   display: none;
 }

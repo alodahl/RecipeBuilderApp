@@ -36,13 +36,15 @@ function getDataFromApi(searchTerm , callback) {
   $.ajax(settings);
 }
 
-
+//<img src="${item.recipe.image}" alt="${item.recipe.label}">
 function renderResult(item, index) {
-  let recipeResult = `<span class="thumbnail col-3" data-id="${index}">
-  <img src="${item.recipe.image}" alt="${item.recipe.label}">
-  <h3>${item.recipe.label}</h3>
-  <h4>by ${item.recipe.source}</h4>
-  <p>${item.recipe.ingredients.length} ingredients</p></span>`;
+  let recipeResult = `<span class="thumbnail col-3" data-id="${index}" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, 0) 50%,rgba(0, 0, 0, 0.8) 100%, transparent), url('${item.recipe.image}')";>
+    <div class="thumbnail-text">
+      <h3>${item.recipe.label}</h3>
+      <h4>by ${item.recipe.source}</h4>
+      <p>${item.recipe.ingredients.length} ingredients</p>
+    </div>
+  </span>`;
   return recipeResult;
 }
 
@@ -63,7 +65,7 @@ function displaySearchData(newRecipes, offset) {
   $('h2').prop("hidden", false);
   $(".js-user-query-terms").html(terms);
   $('.js-results').append(results);
-  if (recipes.count === 0) {
+  if (newRecipes.length === 0) {
     $(".js-results").text("Try removing one ingredient or check your spelling to find some recipes.");
   }
 }
@@ -120,10 +122,13 @@ function watchForClicks() {
     var source = selectedRecipe.source;
     var servings = selectedRecipe.yield;
     var ingredients = renderlistInstructions(selectedRecipe.ingredientLines);
-    let content = `<img class="detail-photo" src="${image}" alt="${label}">
-      <h3>${label}</h3>
-      <h4>by ${source}</h4>
-      <p>Serves ${servings}</p>
+    let content = `<div class="detail-photo" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, 0) 50%,rgba(0, 0, 0, 0.8) 100%, transparent), url('${image}') no-repeat">
+        <div class="detail-text">
+          <h3>${label}</h3>
+          <h4>by ${source}</h4>
+        </div>
+      </div>
+      <p class="servings">Serves ${servings}</p>
       <ul>${ingredients}</ul>
       <button type="button" class="recipe-link-button js-recipe-link-button button" data-id="${index}">view recipe directions</button>`;
     $('.js-modal-content').html(content);
