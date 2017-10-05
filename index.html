@@ -21,7 +21,7 @@
       <hr class="header-hr">
     </header>
     <main role="main" aria-live="assertive">
-      <h2 hidden>Here are some recipes<span class="js-user-query-terms"></span>:</h2>
+      <h2 class="user-results-message" hidden>Here are some recipes<span class="js-user-query-terms"></span>:</h2>
       <div class="js-welcome-message welcome-message">
         <span class="message">
           <h2>Welcome to Recipe Builder!</h2>
@@ -29,7 +29,9 @@
         </span>
         <img class="devices-image" src="Recipe-Builder-on-iPhone-iPad.png" alt="Image of Recipe Builder App on iphone and ipad">
       </div>
-      <div class="results js-results row"></div>
+      <div class="results js-results row">
+        <p class="no-results-message hidden">Try removing one ingredient or check your spelling to find some recipes.</p>
+      </div>
     </main>
     <div class="modal js-modal hidden">
       <div class="dark"></div>
@@ -42,7 +44,6 @@
     <div class="push"></div>
   </div>
   <footer role="footer">
-    <button hidden class="js-see-more-results-button see-more-results-button button" type="button">see more results</button>
     <div class=footer-area><p class="tagline">You have the ingredients, we have the recipes.</p></div>
   </footer>
   <script

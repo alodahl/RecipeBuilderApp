@@ -62,11 +62,12 @@ function displaySearchData(newRecipes, offset) {
   const results = newRecipes.map((item, index) => renderResult(item, offset+index));
   let index = $('.thumbnail').attr('data-id');
   let terms = ` containing "${queryArray}"`
-  $('h2').prop("hidden", false);
+  $('.user-results-message').prop("hidden", "false");
   $(".js-user-query-terms").html(terms);
   $('.js-results').append(results);
   if (newRecipes.length === 0) {
-    $(".js-results").text("Try removing one ingredient or check your spelling to find some recipes.");
+    $("no-results-message").removeClass("hidden");
+    // $(".js-results").text("Try removing one ingredient or check your spelling to find some recipes.");
   }
 }
 
