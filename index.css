@@ -12,7 +12,7 @@ body {
   font-family: Eurostile, sans-serif;
   border-radius: 10px;
   height: 100%;
-  min-width: 455px;
+  min-width: 510px;
   color: #4F4F4F;
 }
 
@@ -76,7 +76,6 @@ footer, .push {
 }
 
 .tagline {
-  width: 500px;
   margin: 0 auto;
 }
 
@@ -265,6 +264,6 @@ footer, .push {
 
 }
 
-/*.hidden {
-display: none;
-}*/
+.hidden {
+  display: none;
+}
