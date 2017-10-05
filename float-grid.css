@@ -22,7 +22,7 @@
 .col-3 {
   /*float: left;*/
   width: 100%;
-  margin: 1.04166666%;
+  margin: 2.0833333%;
 }
 
  /*Mobile defaults */
@@ -36,6 +36,43 @@
   header {
     background-image: url("page-header-vegetables-1000px-wide.jpg");
   }
+  /*.welcome-message {
+    position: relative;
+  }
+
+  .devices-image {
+    width: 50%;
+    float: right;
+  }
+
+  .message {
+    float: left;
+    width: 50%;
+    padding: 30px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }*/
+}
+
+@media only screen and (min-width: 500px) {
+  .title {
+    font-family: Superclarendon, serif;
+    font-size: 50px;
+    color: white;
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+  }
+
+  .message p {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+
   .welcome-message {
     position: relative;
   }
@@ -56,21 +93,6 @@
   }
 }
 
-@media only screen and (min-width: 500px) {
-  .title {
-    font-family: Superclarendon, serif;
-    font-size: 50px;
-    color: white;
-    max-width: 500px;
-    margin: auto;
-    padding: 20px;
-  }
-
-  .message p {
-    font-size: 16px;
-  }
-}
-
 /*@media only screen and (max-width: 777px) {
   .title {
     font-size: 50px;
@@ -83,6 +105,7 @@
 @media only screen and (min-width: 1000px) {
   header {
     background-image: url("page-header-vegetables.jpg");
+    height: 100%;
   }
 
   .title {
@@ -92,11 +115,21 @@
   .message p {
     font-size: 20px;
   }
+
+  .col-3 {
+    /*float: left;*/
+    width: 100%;
+    margin: 1.04166666%;
+  }
 }
 
 @media only screen and (min-width: 1064px) {
   .col-3 {
     width: 33%;
+  }
+
+  .welcome-to-recipe-builder {
+    font-size: 36px;
   }
 }
 
@@ -110,4 +143,8 @@
   .col-3 {
     width: 20%;
   }
+}
+
+.hidden {
+  display: none;
 }

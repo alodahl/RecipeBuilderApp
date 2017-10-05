@@ -154,7 +154,7 @@ footer, .push {
 }
 
 .message p {
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .welcome-message {
@@ -168,10 +168,15 @@ footer, .push {
   color: black;
 }
 
-.welcome-message h2, .welcome-message p {
+.welcome-to-recipe-builder, .welcome-message p {
   margin: 0 auto;
   max-width: 575px;
   padding: 10px;
+}
+
+.welcome-to-recipe-builder {
+  font-family: Superclarendon, serif;
+  font-size: 24px;
 }
 
 .thumbnail {
@@ -272,6 +277,6 @@ footer, .push {
 
 }
 
-.hidden {
+/*.hidden {
   display: none;
-}
+}*/
