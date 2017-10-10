@@ -60,7 +60,7 @@ function renderlistInstructions(recipeIngredientsArray) {
 function displaySearchData(newRecipes, offset) {
   const results = newRecipes.map((item, index) => renderResult(item, offset+index));
   let index = $('.thumbnail').attr('data-id');
-  let terms = ` containing "${queryArray}"`
+  let terms = ` with "${queryArray}"`
   $('.user-results-message').removeClass("hidden");
   $(".js-user-query-terms").html(terms);
   $('.js-results').append(results);

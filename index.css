@@ -23,7 +23,7 @@ header {
 
 .title {
   font-family: Superclarendon, serif;
-  font-size: 4em;
+  font-size: 3em;
   color: white;
   max-width: 500px;
   margin: auto;
@@ -40,7 +40,10 @@ input {
   text-align: center;
   padding: 5px;
   font-family: Eurostile, sans-serif;
+  position: relative;
+  top: 1px;
 }
+
 
 main {
   position: relative;
@@ -55,7 +58,7 @@ footer{
 }
 
 footer, .push {
-  height: 36px; //height of footer-area, .push part of sticky footer
+  height: 72px; //height of footer-area, .push part of sticky footer
 }
 
 #wrap {
@@ -92,13 +95,15 @@ footer, .push {
   display: inline-block;
   padding: 3px;
   border-radius: 5px;
+  position: relative;
 }
 
 .button {
   box-sizing: border-box;
   color: white;
   font-size: 20px;
-  padding: 5px;
+  /*padding: 5px;*/
+  padding: 6px 5px 4px 5px;
   font-family: Eurostile, sans-serif;
   background-color: #FF8E32;
   border-radius: 5px;
@@ -106,13 +111,13 @@ footer, .push {
 
 .add-ingredient-button {
   position: relative;
-  top: 1px;
+  top: 2px;
 }
 
 .find-recipes-button {
   display: block;
   margin: 20px auto;
-  width: 300px;
+  width: 200px;
 }
 
 .added-ingredient {
@@ -165,6 +170,7 @@ footer, .push {
 .welcome-to-recipe-builder {
   font-family: Superclarendon, serif;
   font-size: 24px;
+  padding: 35px 10px 10px 10px;
 }
 
 .thumbnail {
@@ -176,7 +182,7 @@ footer, .push {
   background-repeat: no-repeat;
   background-size: 100%;
   color: white;
-  border-radius: 5px;
+  border-radius: 10px;
   text-align: left;
 }
 
@@ -213,7 +219,7 @@ footer, .push {
   left: 50%;
   transform: translate(-50%, -50%);
   overflow: auto;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .dark {
@@ -243,7 +249,7 @@ footer, .push {
   width: 100%;
   height: 400px;
   color: white;
-  border-radius: 5px;
+  /*border-radius: 10px;*/
   margin-bottom: 10px;
 }
 
@@ -268,6 +274,12 @@ footer, .push {
 
 
 /* Non-mobile, grid */
+@media only screen and (min-width: 335px) {
+  footer, .push {
+    height: 36px; //height of footer-area, .push part of sticky footer
+  }
+}
+
 @media only screen and (min-width: 500px) {
   header {
     background-image: url("page-header-vegetables-1000px-wide.jpg");
@@ -279,6 +291,7 @@ footer, .push {
   }
 
   .title {
+    font-size: 4em;
     font-family: Superclarendon, serif;
     color: white;
     max-width: 500px;
@@ -290,6 +303,16 @@ footer, .push {
   font-size: 3em;
   }
 
+  .find-recipes-button {
+    display: block;
+    margin: 20px auto;
+    width: 300px;
+  }
+
+  .welcome-to-recipe-builder {
+    padding: 40px 10px 10px 10px;
+  }
+
   .message p {
     font-size: 20px;
   }
@@ -299,6 +322,17 @@ footer, .push {
   }
 }
 
+@media only screen and (min-width: 650px) {
+  .welcome-to-recipe-builder {
+    padding: 50px 10px 10px 10px;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .welcome-to-recipe-builder {
+    padding: 55px 10px 10px 10px;
+  }
+}
 
 @media only screen and (min-width: 1000px) {
   header {
@@ -332,6 +366,10 @@ footer, .push {
 
   .welcome-message {
     position: relative;
+  }
+
+  .welcome-to-recipe-builder {
+    padding: 10px;
   }
 
   .devices-image {
