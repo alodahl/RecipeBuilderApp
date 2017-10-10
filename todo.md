@@ -1,3 +1,14 @@
+
+# New ToDos
+- Make sure it works at 320px up to cover all bases.
+- Change the screenshots of the project on iOS devices. -> Show images of the recipes grid & modal. Explain the captures
+- Center "Welcome to Recipe Builder!" vertically(use same margin/padding on top and bottom). when on small devices.
+- The text inside the "Add" button should also be vertically centered within this button. Same with "Find Recipes".  Test this on iPhone + Firefox.
+
+Done
+- The main thing stopped me from approving the project is under 500px, it's not responsive.
+
+
 # ToDo:
 
 - make site mobile responsive (smallest width: 480px) relying on vegetables image height instead of width?
