@@ -12,7 +12,6 @@ body {
   font-family: Eurostile, sans-serif;
   border-radius: 10px;
   height: 100%;
-  min-width: 510px;
   color: #4F4F4F;
 }
 
@@ -24,7 +23,7 @@ header {
 
 .title {
   font-family: Superclarendon, serif;
-  font-size: 36px;
+  font-size: 4em;
   color: white;
   max-width: 500px;
   margin: auto;
@@ -37,7 +36,7 @@ h3, h4, p {
 
 input {
   min-width: 190px;
-  font-size: 16px;
+  font-size: 1em;
   text-align: center;
   padding: 5px;
   font-family: Eurostile, sans-serif;
@@ -113,7 +112,7 @@ footer, .push {
 .find-recipes-button {
   display: block;
   margin: 20px auto;
-  width: 245px;
+  width: 300px;
 }
 
 .added-ingredient {
@@ -261,9 +260,92 @@ footer, .push {
 .light h3, .light h4, .light li, .light p {
   text-align: left;
   margin: 0 20px;
-
 }
 
 .hidden {
   display: none;
+}
+
+
+/* Non-mobile, grid */
+@media only screen and (min-width: 500px) {
+  header {
+    background-image: url("page-header-vegetables-1000px-wide.jpg");
+  }
+
+  input {
+    min-width: 190px;
+    font-size: 3em;
+  }
+
+  .title {
+    font-family: Superclarendon, serif;
+    color: white;
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+  }
+
+  .button {
+  font-size: 3em;
+  }
+
+  .message p {
+    font-size: 20px;
+  }
+
+  .devices-image {
+    content: url("Recipe-Builder-on-iPhone-iPad-large.png");
+  }
+}
+
+
+@media only screen and (min-width: 1000px) {
+  header {
+    background-image: url("page-header-vegetables.jpg");
+    height: 100%;
+  }
+
+  .title {
+    font-size: 100px;
+  }
+
+  .message p {
+    font-size: 20px;
+  }
+}
+
+
+
+@media only screen and (min-width: 1064px) {
+  .welcome-to-recipe-builder {
+    font-size: 36px;
+  }
+
+  .devices-image {
+    content: url("Recipe-Builder-on-iPhone-iPad-large.png");
+  }
+}
+
+
+@media only screen and (min-width: 1100px) {
+
+  .welcome-message {
+    position: relative;
+  }
+
+  .devices-image {
+    width: 50%;
+    float: right;
+  }
+
+  .message {
+    float: left;
+    width: 50%;
+    padding: 30px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
 }
