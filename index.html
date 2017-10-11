@@ -11,11 +11,13 @@
     <header role="header">
       <h1 class="title">recipe builder</h1>
       <form class="ingr-search-form js-ingr-search-form" action="index.html" aria-live="assertive">
-        <div class="ingredients">
-          <span class="js-added-ingredient-list added-ingredient-list"></span>
-          <input class="js-query query" type="text" name="input" placeholder="'add' at least 1 ingredient" required>
+        <div class="add-ingredients-container">
+            <span class="js-added-ingredient-list added-ingredient-list"></span>
+          <div class="ingredients">
+            <input class="js-query query" type="text" name="input" placeholder="'add' at least 1 ingredient" required>
+          </div>
+          <button class="add-ingredient-button button" type="submit" name="add-ingredient-button">add</button>
         </div>
-        <button class="add-ingredient-button button" type="submit" name="add-ingredient-button">add</button>
         <button class="js-find-recipes find-recipes-button button" type="button" name="search-ingredient">find recipes</button>
       </form>
       <hr class="header-hr">
