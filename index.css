@@ -115,24 +115,24 @@ input {
 .add-ingredient-button {
   position: relative;
   top: 5px;
-  padding: 4px 5px 6px 5px;
+  padding: 4px 5px 8px 5px;
 }
 
 .find-recipes-button {
   display: block;
   margin: 20px auto;
-  padding: 4px 40px 6px 40px;
+  padding: 4px 40px 8px 40px;
   width: 300px;
 }
 
 .recipe-link-button {
   font-size: 1.3em;
-  padding: 5px;
+  padding: 3px 5px 8px 5px;
 }
 
 .added-ingredient {
   display: inline-block;
-  padding: 3px 5px 6px 5px;
+  padding: 3px 5px 8px 5px;
   font-size: 16px;
   position: relative;
   top: 5px;
@@ -268,8 +268,9 @@ input {
 }
 
 .recipe-link-button {
-  padding: 5px 50px;
+  padding: 1px 50px 9px 50px;
   margin: 20px;
+  font-size: 0.5em;
 }
 
 .light h3, .light h4, .light li, .light p {
@@ -311,6 +312,11 @@ input {
 
   .detail-photo {
     height: 320px;
+  }
+
+  .recipe-link-button {
+    padding: 2px 20px 4px 20px;
+    font-size: 1.6em;
   }
 }
 
