@@ -93,7 +93,7 @@ footer, .push {
 }
 
 input {
-  width: 230px;
+  width: 224px;
   font-size: 1.0em;
   text-align: center;
   padding: 5px;
@@ -108,36 +108,33 @@ input {
   font-family: Eurostile, sans-serif;
   background-color: #FF8E32;
   border-radius: 5px;
-  /*height: 40px;*/
-  font-size: 1.8em;
+  font-size: 1.3em;
+  padding: 5px;
 }
 
 .add-ingredient-button {
   position: relative;
-  top: 3px;
-  padding: 2px 5px 2px 5px;
+  top: 1px;
 }
 
 .find-recipes-button {
   display: block;
   margin: 20px auto;
-  padding: 2px 40px 2px 40px;
-  width: 300px;
+  padding: 5px 30px;
+  width: 275px;
 }
 
 .recipe-link-button {
-  font-size: 1.3em;
-  padding: 3px 5px 1px 5px;
   margin: 20px;
   background-color: #4F4F4F;
+  padding: 5px 30px;
 }
 
 .added-ingredient {
   display: inline-block;
-  padding: 2px 5px 2px 5px;
-  font-size: 16px;
   position: relative;
-  top: 5px;
+  top: 2px;
+  margin: 5px 0;
 }
 
 .header-hr {
@@ -228,7 +225,7 @@ input {
   background-color: white;
   width: 300px;
   max-width: 98%;
-  max-height: 98%;
+  max-height: 95%;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -263,9 +260,7 @@ input {
   position: relative;
   width: 100%;
   height: 300px;
-  /*height: 400px;*/
   color: white;
-  /*border-radius: 10px;*/
   margin-bottom: 10px;
 }
 
@@ -288,7 +283,6 @@ input {
   .ingredients {
     position: relative;
     width: 250px;
-    /*overflow-y: hidden;*/
   }
 
   input {
@@ -296,23 +290,17 @@ input {
     width: 240px;
   }
 
-  .button {
-    font-size: 2.0em;
+  .find-recipes-button {
+    width: 300px;
   }
 
   .light {
     width: 320px;
     max-width: 95%;
-    max-height: 95%;
   }
 
   .detail-photo {
     height: 320px;
-  }
-
-  .recipe-link-button {
-    padding: 2px 20px 2px 20px;
-    font-size: 1.6em;
   }
 }
 
@@ -323,19 +311,12 @@ input {
 
   .ingredients {
     position: relative;
-    width: 300px;
+    /*width: 300px;*/
     /*overflow-y: hidden;*/
-  }
-
-  input {
-    font-size: 1.4em;
-    min-width: 270px;
   }
 
   .light {
     width: 400px;
-    max-width: 95%;
-    max-height: 95%;
   }
 
   .detail-photo {
@@ -348,16 +329,8 @@ input {
     width: 450px;
   }
 
-  .ingredients {
-    position: relative;
-    width: 350px;
-    /*overflow-y: hidden;*/
-  }
-
   input {
     display: inline-block;
-    font-size: 1.4em;
-    min-width: 270px;
   }
 
   .title {
@@ -370,7 +343,7 @@ input {
   }
 
   .recipe-link-button {
-    padding: 2px 50px 2px 50px;
+    padding: 5px 50px;
   }
 
   .welcome-to-recipe-builder {
