@@ -108,32 +108,32 @@ input {
   font-family: Eurostile, sans-serif;
   background-color: #FF8E32;
   border-radius: 5px;
-  height: 40px;
+  /*height: 40px;*/
   font-size: 1.8em;
 }
 
 .add-ingredient-button {
   position: relative;
-  top: 5px;
-  padding: 4px 5px 8px 5px;
+  top: 3px;
+  padding: 2px 5px 2px 5px;
 }
 
 .find-recipes-button {
   display: block;
   margin: 20px auto;
-  padding: 4px 40px 8px 40px;
+  padding: 2px 40px 2px 40px;
   width: 300px;
 }
 
 .recipe-link-button {
   font-size: 1.3em;
-  padding: 3px 5px 8px 5px;
+  padding: 3px 5px 3px 5px;
   margin: 20px;
 }
 
 .added-ingredient {
   display: inline-block;
-  padding: 3px 5px 8px 5px;
+  padding: 2px 5px 2px 5px;
   font-size: 16px;
   position: relative;
   top: 5px;
@@ -310,7 +310,7 @@ input {
   }
 
   .recipe-link-button {
-    padding: 2px 20px 4px 20px;
+    padding: 2px 20px 2px 20px;
     font-size: 1.6em;
   }
 }
@@ -369,7 +369,7 @@ input {
   }
 
   .recipe-link-button {
-    padding: 1px 50px 4px 50px;
+    padding: 2px 50px 2px 50px;
   }
 
   .welcome-to-recipe-builder {
