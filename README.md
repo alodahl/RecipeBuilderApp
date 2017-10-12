@@ -6,7 +6,7 @@ Recipe Builder was a response to the need to be creative with ingredients I alre
 
 ## Technologies used
 
-Recipe Builder employs HTML, CSS styling, JavaScript, jQuery and AJAX to retrieve and display API data.
+Recipe Builder employs HTML, CSS styling, JavaScript, custom modal pop-ups, jQuery and AJAX to retrieve and display API data.
 
 ## Mocks
 ![Recipe Builder Site Mock-up](recipe-builder-mockup2.jpg)

@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Recipe Builder</title>
   <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="float-grid.css">
@@ -11,34 +12,44 @@
     <header role="header">
       <h1 class="title">recipe builder</h1>
       <form class="ingr-search-form js-ingr-search-form" action="index.html" aria-live="assertive">
-        <div class="ingredients">
+        <div class="add-ingredients-container">
           <span class="js-added-ingredient-list added-ingredient-list"></span>
-          <input class="js-query query" type="text" name="input" placeholder="'add' at least 1 ingredient" required>
+          <div class="ingredients">
+            <input class="js-query query" type="text" name="input" placeholder="'add' at least 1 ingredient" required>
+          </div>
+          <button class="add-ingredient-button button" type="submit" name="add-ingredient-button">add</button>
         </div>
-        <button class="add-ingredient-button button" type="submit" name="add-ingredient-button">add</button>
         <button class="js-find-recipes find-recipes-button button" type="button" name="search-ingredient">find recipes</button>
       </form>
       <hr class="header-hr">
     </header>
     <main role="main" aria-live="assertive">
-      <h2 class="user-results-message" hidden>Here are some recipes<span class="js-user-query-terms"></span>:</h2>
+      <h2 class="user-results-message hidden">Here are some recipes<span class="js-user-query-terms"></span>:</h2>
       <div class="js-welcome-message welcome-message">
-        <span class="message">
-          <h2>Welcome to Recipe Builder!</h2>
+        <div class="message-with-ipad">
+          <h3 class="welcome-to-recipe-builder">Welcome to Recipe Builder!</h3>
           <p>Have ingredients, but not sure what to make?  Type an ingredient and press "add".  Add another, or click a name to subtract. When you are ready, press "find recipes".</p>
-        </span>
-        <img class="devices-image" src="Recipe-Builder-on-iPhone-iPad.png" alt="Image of Recipe Builder App on iphone and ipad">
+        </div>
+        <div class="ipad-image-container">
+          <img class="ipad-image" src="iPad.png" alt="Image of Recipe Builder App on iphone and ipad">
+        </div>
       </div>
-      <div class="results js-results row">
-        <p class="no-results-message hidden">Try removing one ingredient or check your spelling to find some recipes.</p>
+      <div class="js-welcome-message welcome-message">
+        <div class="message-with-iphone">
+          <h3 class="welcome-to-recipe-builder">Get Cooking!</h3>
+          <p>Scroll through your results, and click on a recipe to view details. Feel free to change ingredients and refine your search.</p>
+        </div>
+          <img class="iphone-image" src="iPhone.png" alt="Image of Recipe Builder App on iphone and ipad">
       </div>
+      <div class="results js-results row"></div>
+      <p class="hidden" id="no-results-message">Try removing one ingredient or check your spelling to find recipes.</p>
     </main>
     <div class="modal js-modal hidden">
       <div class="dark"></div>
       <div class="light">
         <div class="js-modal-content modal-content"></div>
         <img class="close-button" role="button"
-        src="http://downloadicons.net/sites/default/files/multiplication-sign-icon-33109.png" alt="click to exit window">
+        src="x-icon-tiny.png" alt="click to exit window">
       </div>
     </div>
     <div class="push"></div>
