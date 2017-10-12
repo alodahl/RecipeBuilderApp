@@ -178,7 +178,7 @@ input {
 
 .welcome-message {
   position: relative;
-  background: linear-gradient(#FFED7A, #FFDE0A);
+  background: linear-gradient(#FFFFFF, #FFED7A);  //(#FFED7A, #FFDE0A)
   background-size: cover;
   box-sizing: border-box;
   margin-bottom: 0;
