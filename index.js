@@ -35,7 +35,7 @@ function getDataFromApi(searchTerm , callback) {
 
 //renders recipe results and returns them to displaySearchData()
 function renderResult(item, index) {
-  let recipeResult = `<span class="thumbnail col-3" data-id="${index}" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, 0) 50%,rgba(0, 0, 0, 0.8) 100%, transparent), url('${item.recipe.image}')";>
+  let recipeResult = `<span class="thumbnail col-3" data-id="${index}" role="button" name="${item.recipe.label}" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, 0) 50%,rgba(0, 0, 0, 0.8) 100%, transparent), url('${item.recipe.image}')";>
   <div class="thumbnail-text">
   <h3>${item.recipe.label}</h3>
   <h4>by ${item.recipe.source}</h4>
@@ -60,7 +60,7 @@ function renderlistInstructions(recipeIngredientsArray) {
 function displaySearchData(newRecipes, offset) {
   const results = newRecipes.map((item, index) => renderResult(item, offset+index));
   let index = $('.thumbnail').attr('data-id');
-  let terms = ` with "${queryArray}"`
+  let terms = ` with "${queryArray.join(", ")}"`
   $('.user-results-message').removeClass("hidden");
   $(".js-user-query-terms").html(terms);
   $('.js-results').append(results);
