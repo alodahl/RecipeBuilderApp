@@ -76,7 +76,7 @@ footer, .push {
 }
 
 .add-ingredients-container {
-  min-height: 50px;
+  min-height: 37px;
   width: 310px;
   margin: 0 auto;
 }
@@ -111,6 +111,11 @@ input {
   font-size: 1.3em;
   padding: 5px;
 }
+
+.button:hover {
+  cursor: pointer;
+}
+
 
 .add-ingredient-button {
   position: relative;
@@ -157,7 +162,8 @@ input {
 }
 
 .iphone-image {
-  width: 50%;
+  width: 40%;
+  padding-bottom: 30px;
   /*margin: 80px;*/
 }
 
@@ -261,6 +267,10 @@ input {
   right: 0px;
   width: 30px;
   height: 30px;
+}
+
+.close-button:hover {
+  cursor: pointer;
 }
 
 .ingredients-list {
@@ -380,6 +390,12 @@ input {
   .add-ingredients-container {
     width: 750px;
   }
+
+  .ipad-image {
+    width: 80%;
+    margin: 0 auto;
+    padding: 0 80px;
+  }
 }
 
 @media only screen and (min-width: 1000px) {
@@ -426,7 +442,8 @@ input {
   }
 
   .ipad-image {
-    width: 80%;
+    width: 70%;
+    padding: 0;
     margin: 50px auto 0 auto;
   }
 
@@ -438,9 +455,9 @@ input {
 
   .iphone-image {
     margin: 20px auto;
-    width: 60%;
-    /*float: left;*/
-    /*margin: 80px;*/
+    width: 40%;
+    padding-bottom: 0;
+    padding-top: 20px;
   }
 
   .message-with-ipad {
@@ -463,14 +480,42 @@ input {
   .message-with-iphone {
     padding: 30px;
     position: relative;
-    top: 180px;
+    top: 140px;
     right: 70px;
+  }
+}
 
-    /*margin: 0 auto;*/
-/*
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);*/*/
+@media only screen and (min-width: 1300px) {
+  .message-with-iphone {
+    top: 160px;
+    right: 90px;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  .message-with-iphone {
+    top: 170px;
+    right: 100px;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .message-with-iphone {
+    top: 190px;
+    right: 120px;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .message-with-iphone {
+    top: 190px;
+    right: 140px;
+  }
+}
+
+@media only screen and (min-width: 1700px) {
+  .message-with-iphone {
+    top: 200px;
+    right: 150px;
   }
 }
