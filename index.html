@@ -13,7 +13,7 @@
       <h1 class="title">recipe builder</h1>
       <form class="ingr-search-form js-ingr-search-form" action="index.html" aria-live="assertive">
         <div class="add-ingredients-container">
-            <span class="js-added-ingredient-list added-ingredient-list"></span>
+          <span class="js-added-ingredient-list added-ingredient-list"></span>
           <div class="ingredients">
             <input class="js-query query" type="text" name="input" placeholder="'add' at least 1 ingredient" required>
           </div>
@@ -26,11 +26,20 @@
     <main role="main" aria-live="assertive">
       <h2 class="user-results-message hidden">Here are some recipes<span class="js-user-query-terms"></span>:</h2>
       <div class="js-welcome-message welcome-message">
-        <span class="message">
+        <div class="message-with-ipad">
           <h3 class="welcome-to-recipe-builder">Welcome to Recipe Builder!</h3>
           <p>Have ingredients, but not sure what to make?  Type an ingredient and press "add".  Add another, or click a name to subtract. When you are ready, press "find recipes".</p>
-        </span>
-        <img class="devices-image" src="Recipe-Builder-on-iPhone-iPad.png" alt="Image of Recipe Builder App on iphone and ipad">
+        </div>
+        <div class="ipad-image-container">
+          <img class="ipad-image" src="iPad.png" alt="Image of Recipe Builder App on iphone and ipad">
+        </div>
+      </div>
+      <div class="js-welcome-message welcome-message">
+        <div class="message-with-iphone">
+          <h3 class="welcome-to-recipe-builder">Get Cooking!</h3>
+          <p>Scroll through your results, and click on a recipe to view details. Feel free to change ingredients and refine your search.</p>
+        </div>
+          <img class="iphone-image" src="iPhone.png" alt="Image of Recipe Builder App on iphone and ipad">
       </div>
       <div class="results js-results row"></div>
       <p class="hidden" id="no-results-message">Try removing one ingredient or check your spelling to find recipes.</p>

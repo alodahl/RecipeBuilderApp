@@ -151,21 +151,28 @@ input {
   margin: 0 auto;
 }
 
-.devices-image {
-  width: 100%;
+.ipad-image {
+  width: 80%;
+  margin: 0 auto;
 }
 
-.message {
-  padding: 30px 30px;
+.iphone-image {
+  width: 50%;
+  margin: 80px;
 }
 
-.message p {
+.message-with-ipad, .message-with-iphone {
+  padding: 30px;
+  margin: 50px auto;
+}
+
+.message-with-ipad p, .message-with-iphone p {
   font-size: 16px;
 }
 
 .welcome-message {
   position: relative;
-  background-color: #FFDC60;
+  background: linear-gradient(#FFED7A, #FFDE0A);
   background-size: cover;
   box-sizing: border-box;
   margin-bottom: 0;
@@ -182,7 +189,6 @@ input {
 .welcome-to-recipe-builder {
   font-family: Superclarendon, serif;
   font-size: 24px;
-  padding: 35px 10px 10px 10px;
 }
 
 .thumbnail {
@@ -346,26 +352,14 @@ input {
     padding: 5px 50px;
   }
 
-  .welcome-to-recipe-builder {
-    padding: 40px 10px 10px 10px;
-  }
-
-  .message p {
+  .message-with-ipad p, .message-with-iphone p {
     font-size: 20px;
-  }
-
-  .devices-image {
-    content: url("Recipe-Builder-on-iPhone-iPad-large.png");
   }
 }
 
 @media only screen and (min-width: 650px) {
   .add-ingredients-container {
     width: 550px;
-  }
-
-  .welcome-to-recipe-builder {
-    padding: 50px 10px 10px 10px;
   }
 }
 
@@ -376,12 +370,6 @@ input {
 
   .add-ingredients-container {
     width: 750px;
-  }
-}
-
-@media only screen and (min-width: 800px) {
-  .welcome-to-recipe-builder {
-    padding: 55px 10px 10px 10px;
   }
 }
 
@@ -399,7 +387,7 @@ input {
     width: 850px;
   }
 
-  .message p {
+  .message-with-ipad p, .message-with-iphone p {
     font-size: 20px;
   }
 }
@@ -409,10 +397,6 @@ input {
 @media only screen and (min-width: 1064px) {
   .welcome-to-recipe-builder {
     font-size: 36px;
-  }
-
-  .devices-image {
-    content: url("Recipe-Builder-on-iPhone-iPad-large.png");
   }
 }
 
@@ -425,19 +409,36 @@ input {
 
   .welcome-message {
     position: relative;
+    width: 100%;
   }
 
-  .welcome-to-recipe-builder {
-    padding: 10px;
-  }
-
-  .devices-image {
+  .ipad-image-container {
     width: 50%;
     float: right;
   }
 
-  .message {
+  .ipad-image {
+    width: 80%;
+    margin: 50px auto 0 auto;
+  }
+
+  .iphone-image {
+    width: 30%;
     float: left;
+  }
+
+  .message-with-ipad {
+    float: left;
+    width: 50%;
+    padding: 30px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+
+  .message-with-iphone {
+    float: right;
     width: 50%;
     padding: 30px;
     position: absolute;
