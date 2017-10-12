@@ -158,12 +158,12 @@ input {
 
 .iphone-image {
   width: 50%;
-  margin: 80px;
+  /*margin: 80px;*/
 }
 
 .message-with-ipad, .message-with-iphone {
   padding: 30px;
-  margin: 50px auto;
+  margin: 20px auto;
 }
 
 .message-with-ipad p, .message-with-iphone p {
@@ -202,6 +202,11 @@ input {
   color: white;
   border-radius: 10px;
   text-align: left;
+}
+
+.thumbnail:hover {
+  cursor: pointer;
+  color: #FEF8AE;
 }
 
 .thumbnail-text, .detail-text {
@@ -256,6 +261,10 @@ input {
   right: 0px;
   width: 30px;
   height: 30px;
+}
+
+.ingredients-list {
+  list-style-type: square;
 }
 
 .instructions {
@@ -408,7 +417,6 @@ input {
   }
 
   .welcome-message {
-    position: relative;
     width: 100%;
   }
 
@@ -422,9 +430,17 @@ input {
     margin: 50px auto 0 auto;
   }
 
-  .iphone-image {
-    width: 30%;
+  .iphone-image-container {
+    position: relative;
     float: left;
+    width: 50%;
+  }
+
+  .iphone-image {
+    margin: 20px auto;
+    width: 60%;
+    /*float: left;*/
+    /*margin: 80px;*/
   }
 
   .message-with-ipad {
@@ -435,15 +451,26 @@ input {
     top: 50%;
     left: 0;
     transform: translateY(-50%);
+    margin: 0 auto;
+  }
+
+  .message-with-iphone-container {
+    position: relative;
+    float: right;
+    width: 50%;
   }
 
   .message-with-iphone {
-    float: right;
-    width: 50%;
     padding: 30px;
+    position: relative;
+    top: 180px;
+    right: 70px;
+
+    /*margin: 0 auto;*/
+/*
     position: absolute;
     top: 50%;
     left: 0;
-    transform: translateY(-50%);
+    transform: translateY(-50%);*/*/
   }
 }

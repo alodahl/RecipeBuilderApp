@@ -131,7 +131,7 @@ function watchForClicks() {
     </div>
     </div>
     <p class="servings">Serves ${servings}</p>
-    <ul>${ingredients}</ul>
+    <ul class="ingredients-list">${ingredients}</ul>
     <button type="button" class="recipe-link-button js-recipe-link-button button" data-id="${index}">view recipe directions</button>`;
     $('.js-modal-content').html(content);
     $('.js-modal').removeClass("hidden");  //then show the div
