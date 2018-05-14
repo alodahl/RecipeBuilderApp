@@ -4,6 +4,8 @@ This recipe search uses the Edamam Recipe API to search for recipes based on ing
 
 Recipe Builder was a response to the need to be creative with ingredients I already had, and going shopping before meal time was not an option.
 
+[Try the Recipe Builder App.](https://alodahl.github.io/RecipeBuilderApp/)
+
 ## Technologies used
 
 Recipe Builder employs HTML, CSS styling, JavaScript, custom modal pop-ups, jQuery and AJAX to retrieve and display API data.
