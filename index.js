@@ -7,12 +7,13 @@ let lastResult = 0;
 let displayedLastRecipe = true;
 
 function getDataFromApi(searchTerm , callback) {
+  console.log(URL);
   const settings = {
-    url: 'https://api.edamam.com/search',
+    url: URL,
     data: {
       q: `${searchTerm} in:ingredients`,
-      app_id: '37073675',
-      app_key: '46b633f590a05be11cab8a438977deb9',
+      app_id: APP_ID,
+      app_key: APP_KEY,
       from: firstResult,
       to: lastResult
     },
@@ -35,7 +36,7 @@ function getDataFromApi(searchTerm , callback) {
 
 //renders recipe results and returns them to displaySearchData()
 function renderResult(item, index) {
-  let recipeResult = `<span class="thumbnail col-3" data-id="${index}" role="button" name="${item.recipe.label}" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, 0) 50%,rgba(0, 0, 0, 0.8) 100%, transparent), url('${item.recipe.image}')";>
+  let recipeResult = `<span class="thumbnail col-3" data-id="${index}" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, 0) 50%,rgba(0, 0, 0, 0.8) 100%, transparent), url('${item.recipe.image}')";>
   <div class="thumbnail-text">
   <h3>${item.recipe.label}</h3>
   <h4>by ${item.recipe.source}</h4>
