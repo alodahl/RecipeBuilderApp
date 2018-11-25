@@ -9,11 +9,11 @@ let displayedLastRecipe = true;
 function getDataFromApi(searchTerm , callback) {
   console.log(URL);
   const settings = {
-    url: URL,
+    url: 'https://api.edamam.com/search',
     data: {
       q: `${searchTerm} in:ingredients`,
-      app_id: APP_ID,
-      app_key: APP_KEY,
+      app_id: '37073675',
+      app_key: '46b633f590a05be11cab8a438977deb9',
       from: firstResult,
       to: lastResult
     },
